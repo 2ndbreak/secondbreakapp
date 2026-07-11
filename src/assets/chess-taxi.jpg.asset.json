@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "9685ab91-629d-4425-ab07-81d03db9d5f0",
-  "project_id": "34bb73d4-28e8-4c16-883f-61f250291786",
-  "url": "/__l5e/assets-v1/9685ab91-629d-4425-ab07-81d03db9d5f0/chess-taxi.jpg",
-  "r2_key": "a/v1/34bb73d4-28e8-4c16-883f-61f250291786/9685ab91-629d-4425-ab07-81d03db9d5f0/chess-taxi.jpg",
-  "original_filename": "chess-taxi.jpg",
-  "size": 243583,
   "content_type": "image/jpeg",
-  "created_at": "2026-07-11T16:44:29Z"
+  "created_at": "2026-07-11T16:44:29Z",
+  "original_filename": "chess-taxi.jpg",
+  "project_id": "6c90277f-455c-4f44-8bc5-f66a6a035438",
+  "r2_key": "a/v1/6c90277f-455c-4f44-8bc5-f66a6a035438/9685ab91-629d-4425-ab07-81d03db9d5f0/chess-taxi.jpg",
+  "size": 243583,
+  "url": "/__l5e/assets-v1/9685ab91-629d-4425-ab07-81d03db9d5f0/chess-taxi.jpg",
+  "version": 1
 }
