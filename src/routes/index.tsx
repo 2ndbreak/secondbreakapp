@@ -12,20 +12,20 @@ function Home() {
   const storySunday = entries.find((e) => e.type === "folktale")!;
   return (
     <>
-      {/* HERO — plum poster with bleeding type + overlapping photo */}
-      <section className="color-plum grain relative overflow-hidden">
-        <div className="mx-auto grid max-w-[1500px] grid-cols-12 gap-6 px-4 pb-40 pt-16 sm:px-8 sm:pt-24 md:pb-56">
-          <div className="col-span-12 md:col-span-8">
+      {/* HERO — plum poster, photo alongside (no overlap, no bleeding type) */}
+      <section className="color-plum grain">
+        <div className="mx-auto grid max-w-[1500px] grid-cols-12 gap-10 px-4 py-16 sm:px-8 sm:py-24">
+          <div className="col-span-12 md:col-span-7">
             <div className="flex items-center gap-3 text-[color:var(--color-chartreuse)]">
               <BrandMark size={22} color="var(--color-chartreuse)" />
               <span className="text-xs uppercase tracking-[0.25em]">Take Another Break</span>
             </div>
-            <h1 className="poster mt-6 text-[color:var(--color-flame)]">
+            <h1 className="poster mt-6 text-[color:var(--color-flame)] break-words">
               REMEMBER
               <br />
               <span className="text-[color:var(--color-chartreuse)]">HOW TO</span>
               <br />
-              <span className="-ml-[2vw] block">PLAY?</span>
+              <span className="block">PLAY?</span>
             </h1>
             <p className="mt-8 max-w-lg text-lg leading-relaxed text-[color:var(--color-ice)]/90">
               Rediscover indigenous games, stories & childhood wonder — every break has a story.
@@ -38,6 +38,12 @@ function Home() {
                 Explore the archive
               </Link>
               <Link
+                to="/explore-games"
+                className="inline-flex items-center gap-2 rounded-md bg-[color:var(--color-chartreuse)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] transition-colors hover:bg-[color:var(--color-ice)]"
+              >
+                Explore games (videos)
+              </Link>
+              <Link
                 to="/share"
                 className="inline-flex items-center gap-2 rounded-md border border-[color:var(--color-ice)]/50 px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-ice)] transition-colors hover:border-[color:var(--color-chartreuse)] hover:text-[color:var(--color-chartreuse)]"
               >
@@ -45,18 +51,17 @@ function Home() {
               </Link>
             </div>
           </div>
-        </div>
-        {/* overlapping photo — bleeds off hero bottom edge */}
-        <div className="pointer-events-none absolute right-2 sm:right-8 -bottom-16 w-[52vw] max-w-[520px] md:w-[38vw]">
-          <FramedPhoto
-            src={photos.skip.url}
-            alt={photos.skip.alt}
-            className="aspect-[4/5] shadow-2xl"
-            rotate={1}
-            loading="eager"
-            width={900}
-            height={1125}
-          />
+          <div className="col-span-12 md:col-span-5">
+            <FramedPhoto
+              src={photos.skip.url}
+              alt={photos.skip.alt}
+              className="aspect-[4/5]"
+              rotate={1}
+              loading="eager"
+              width={900}
+              height={1125}
+            />
+          </div>
         </div>
       </section>
 
@@ -70,17 +75,14 @@ function Home() {
             </h2>
             <div className="mt-8 space-y-5 text-lg leading-relaxed text-[color:var(--color-plum)]/85">
               <p>
-                Somebody starts humming the song. Everybody laughs. Somebody else names another game — Diketo, Kgati, Amagenda, Morabaraba — and the room lights up.
-              </p>
-              <p>
-                Then somebody asks, "But wait — how did it go again?"
+                Somebody hums a song. Somebody names a game — Diketo, Kgati, Amagenda, Morabaraba. The room lights up. Then somebody asks how it went again, and nobody can quite remember.
               </p>
               <p className="display text-2xl sm:text-3xl text-[color:var(--color-plum)]">
                 They remember the memories. They've forgotten the game.
               </p>
-              <p>
-                Culture isn't lost because people stop caring. It's lost because people stop practising. You can't pass down what you don't play.
-              </p>
+              <Link to="/about" className="inline-block text-xs uppercase tracking-widest text-[color:var(--color-flame)] hover:underline underline-offset-4">
+                Read the full idea →
+              </Link>
             </div>
           </div>
           <div className="col-span-12 md:col-span-5 md:pt-16">

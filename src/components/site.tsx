@@ -39,23 +39,25 @@ interface QuoteCardProps {
 }
 
 export function QuoteCard({ src, alt, quote, tone = "chartreuse", rotate }: QuoteCardProps) {
-  const toneClass =
+  const bg =
     tone === "chartreuse"
-      ? "text-[color:var(--color-chartreuse)]"
+      ? "bg-[color:var(--color-chartreuse)] text-[color:var(--color-plum)]"
       : tone === "ice"
-      ? "text-[color:var(--color-ice)]"
-      : "text-[color:var(--color-flame)]";
+      ? "bg-[color:var(--color-ice)] text-[color:var(--color-plum)]"
+      : "bg-[color:var(--color-flame)] text-[color:var(--color-chartreuse)]";
   return (
     <figure
-      className="frame relative aspect-[4/5] w-full overflow-hidden"
+      className="w-full"
       style={rotate ? { transform: `rotate(${rotate}deg)` } : undefined}
     >
-      <img src={src} alt={alt} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[color:var(--color-plum)] via-[color:var(--color-plum)]/70 to-transparent p-6 pt-24">
-        <blockquote className={`display text-2xl sm:text-3xl leading-[0.95] ${toneClass}`}>
+      <div className="frame aspect-[4/5] w-full overflow-hidden">
+        <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
+      </div>
+      <figcaption className={`${bg} p-6`}>
+        <blockquote className="display text-xl sm:text-2xl leading-[1.05] break-words">
           {quote}
         </blockquote>
-      </div>
+      </figcaption>
     </figure>
   );
 }
