@@ -13,6 +13,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShareRouteImport } from './routes/share'
 import { Route as SchoolsRouteImport } from './routes/schools'
 import { Route as DayRouteImport } from './routes/day'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ArchiveRouteImport } from './routes/archive'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -36,6 +37,11 @@ const SchoolsRoute = SchoolsRouteImport.update({
 const DayRoute = DayRouteImport.update({
   id: '/day',
   path: '/day',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ArchiveRoute = ArchiveRouteImport.update({
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/archive': typeof ArchiveRoute
+  '/auth': typeof AuthRoute
   '/day': typeof DayRoute
   '/schools': typeof SchoolsRoute
   '/share': typeof ShareRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/archive': typeof ArchiveRoute
+  '/auth': typeof AuthRoute
   '/day': typeof DayRoute
   '/schools': typeof SchoolsRoute
   '/share': typeof ShareRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/archive': typeof ArchiveRoute
+  '/auth': typeof AuthRoute
   '/day': typeof DayRoute
   '/schools': typeof SchoolsRoute
   '/share': typeof ShareRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/archive'
+    | '/auth'
     | '/day'
     | '/schools'
     | '/share'
@@ -106,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/archive'
+    | '/auth'
     | '/day'
     | '/schools'
     | '/share'
@@ -116,6 +127,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/archive'
+    | '/auth'
     | '/day'
     | '/schools'
     | '/share'
@@ -127,6 +139,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ArchiveRoute: typeof ArchiveRoute
+  AuthRoute: typeof AuthRoute
   DayRoute: typeof DayRoute
   SchoolsRoute: typeof SchoolsRoute
   ShareRoute: typeof ShareRoute
@@ -164,6 +177,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DayRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/archive': {
       id: '/archive'
       path: '/archive'
@@ -199,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ArchiveRoute: ArchiveRoute,
+  AuthRoute: AuthRoute,
   DayRoute: DayRoute,
   SchoolsRoute: SchoolsRoute,
   ShareRoute: ShareRoute,
