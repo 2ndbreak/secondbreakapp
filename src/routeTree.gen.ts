@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShareRouteImport } from './routes/share'
 import { Route as SchoolsRouteImport } from './routes/schools'
+import { Route as ExploreGamesRouteImport } from './routes/explore-games'
 import { Route as DayRouteImport } from './routes/day'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ArchiveRouteImport } from './routes/archive'
@@ -32,6 +33,11 @@ const ShareRoute = ShareRouteImport.update({
 const SchoolsRoute = SchoolsRouteImport.update({
   id: '/schools',
   path: '/schools',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExploreGamesRoute = ExploreGamesRouteImport.update({
+  id: '/explore-games',
+  path: '/explore-games',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DayRoute = DayRouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/archive': typeof ArchiveRoute
   '/auth': typeof AuthRoute
   '/day': typeof DayRoute
+  '/explore-games': typeof ExploreGamesRoute
   '/schools': typeof SchoolsRoute
   '/share': typeof ShareRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/archive': typeof ArchiveRoute
   '/auth': typeof AuthRoute
   '/day': typeof DayRoute
+  '/explore-games': typeof ExploreGamesRoute
   '/schools': typeof SchoolsRoute
   '/share': typeof ShareRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/archive': typeof ArchiveRoute
   '/auth': typeof AuthRoute
   '/day': typeof DayRoute
+  '/explore-games': typeof ExploreGamesRoute
   '/schools': typeof SchoolsRoute
   '/share': typeof ShareRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/archive'
     | '/auth'
     | '/day'
+    | '/explore-games'
     | '/schools'
     | '/share'
     | '/sitemap.xml'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/archive'
     | '/auth'
     | '/day'
+    | '/explore-games'
     | '/schools'
     | '/share'
     | '/sitemap.xml'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/archive'
     | '/auth'
     | '/day'
+    | '/explore-games'
     | '/schools'
     | '/share'
     | '/sitemap.xml'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   ArchiveRoute: typeof ArchiveRoute
   AuthRoute: typeof AuthRoute
   DayRoute: typeof DayRoute
+  ExploreGamesRoute: typeof ExploreGamesRoute
   SchoolsRoute: typeof SchoolsRoute
   ShareRoute: typeof ShareRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -168,6 +181,13 @@ declare module '@tanstack/react-router' {
       path: '/schools'
       fullPath: '/schools'
       preLoaderRoute: typeof SchoolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explore-games': {
+      id: '/explore-games'
+      path: '/explore-games'
+      fullPath: '/explore-games'
+      preLoaderRoute: typeof ExploreGamesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/day': {
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   ArchiveRoute: ArchiveRoute,
   AuthRoute: AuthRoute,
   DayRoute: DayRoute,
+  ExploreGamesRoute: ExploreGamesRoute,
   SchoolsRoute: SchoolsRoute,
   ShareRoute: ShareRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
