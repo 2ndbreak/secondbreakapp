@@ -78,7 +78,7 @@ function AuthPage() {
       <div className="mx-auto grid max-w-[1200px] grid-cols-12 gap-10 px-4 py-20 sm:px-8">
         <div className="col-span-12 md:col-span-6">
           <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-flame)]">{kicker}</p>
-          <h1 className="poster mt-4 text-[color:var(--color-plum)] ">{heading}</h1>
+          <h1 className="poster mt-4 text-[color:var(--color-plum)] break-words hyphens-none" style={{ fontSize: "clamp(2.25rem, 5vw, 4rem)", lineHeight: 1.05 }}>{heading}</h1>
           <p className="mt-6 max-w-md text-[color:var(--color-plum)]/80">
             {mode === "signup"
               ? "Create an account to save entries and hear about the next 2nd Break Day."
