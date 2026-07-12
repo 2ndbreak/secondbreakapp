@@ -7,7 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -22,6 +22,8 @@ const SOCIALS = [
   { label: "YouTube", href: "https://youtube.com/" },
   { label: "TikTok", href: "https://tiktok.com/" },
 ];
+// EDIT ME
+const CONTACT_EMAIL = "hello@2ndbreak.co.za";
 
 function NotFoundComponent() {
   return (
