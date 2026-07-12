@@ -63,8 +63,8 @@ function DayPage() {
           <div className="col-span-12 md:col-span-6">
             <h3 className="display text-2xl text-[color:var(--color-plum)]">Host a break</h3>
             <p className="mt-2 text-sm text-[color:var(--color-plum)]/70">Tell us where you'd bring 2nd Break Day. School, workplace, park, rank, block — anywhere.</p>
-            <div className="mt-4 overflow-hidden rounded-md border border-[color:var(--color-plum)]/25 bg-white">
-              <iframe src={GOOGLE_FORM_HOST_URL} title="Host a break" width="100%" height="900" loading="lazy" className="block w-full">Loading form…</iframe>
+            <div className="mt-4">
+              <HostBreakForm />
             </div>
           </div>
         </div>
