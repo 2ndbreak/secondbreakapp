@@ -83,7 +83,7 @@ function EventsPage() {
         <div className="mx-auto grid max-w-[1400px] grid-cols-12 gap-10 px-4 py-20 sm:px-8">
           <div className="col-span-12 md:col-span-7">
             <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-chartreuse)]">Events</p>
-            <h1 className="poster mt-4 text-[color:var(--color-chartreuse)] break-words">
+            <h1 className="poster mt-4 text-[color:var(--color-chartreuse)]">
               Where we're<br />playing next.
             </h1>
             <p className="mt-6 max-w-lg text-lg text-[color:var(--color-chartreuse)]/90">
