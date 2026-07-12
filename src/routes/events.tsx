@@ -2,6 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { FramedPhoto } from "@/components/site";
 import { photos } from "@/data/entries";
 
+// EDIT ME — replace with your Host-a-Break Google Form embed URL
+const GOOGLE_FORM_HOST_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSf-REPLACE_HOST/viewform?embedded=true";
+
 type Event = {
   slug: string;
   title: string;
