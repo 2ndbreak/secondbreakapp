@@ -1,10 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { FramedPhoto } from "@/components/site";
 import { photos } from "@/data/entries";
-
-// TODO: Replace with your published Google Form embed URL (Send → Embed HTML).
-const GOOGLE_FORM_EMBED_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSf-REPLACE_ME/viewform?embedded=true";
+import { ShareForm } from "@/components/forms/ShareForm";
 
 export const Route = createFileRoute("/share")({
   head: () => ({
