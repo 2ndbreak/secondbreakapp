@@ -222,15 +222,8 @@ function Home() {
             <h2 className="display mt-4 text-3xl sm:text-5xl leading-[1.05] text-[color:var(--color-chartreuse)]">
               A new game, a new story, in your inbox every fortnight.
             </h2>
-            <div className="mt-8 max-w-lg overflow-hidden rounded-md border border-[color:var(--color-chartreuse)]/40 bg-white">
-              <iframe
-                src={GOOGLE_FORM_JOIN_URL}
-                title="Join the playground"
-                width="100%"
-                height="520"
-                loading="lazy"
-                className="block w-full"
-              >Loading form…</iframe>
+            <div className="mt-8 max-w-lg">
+              <SignupForm source="home" showMessage messageLabel="Anything else? (optional)" submitLabel="Join the playground" tone="plum" />
             </div>
           </div>
           <div className="col-span-12 md:col-span-5">
