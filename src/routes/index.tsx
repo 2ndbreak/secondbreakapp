@@ -173,8 +173,8 @@ function Home() {
           </div>
           <div className="col-span-12 md:col-span-5">
             <FramedPhoto
-              src={photos.cards.url}
-              alt="Friends gathered on the floor mid-game"
+              src={photos.diketoTop.url}
+              alt={photos.diketoTop.alt}
               className="aspect-[4/5]"
               rotate={-1.5}
             />
