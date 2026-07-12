@@ -69,7 +69,7 @@ function AuthPage() {
     }
   }
 
-  const heading = mode === "signup" ? "Join the playground." : mode === "forgot" ? "Reset your password." : "Welcome back.";
+  const heading = mode === "signup" ? "Join the playground." : mode === "forgot" ? "Reset your password." : "WELCOME BACK.";
   const kicker = mode === "signup" ? "Sign up" : mode === "forgot" ? "Forgot password" : "Log in";
   const submitLabel = mode === "signup" ? "Create account" : mode === "forgot" ? "Send reset link" : "Log in";
 
