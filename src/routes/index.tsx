@@ -51,10 +51,10 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div className="col-span-12 md:col-span-5">
+            <div className="col-span-12 md:col-span-5 md:pt-[9vw] lg:pt-[7vw]">
               <FramedPhoto
-                src={photos.jumpRope.url}
-                alt={photos.jumpRope.alt}
+                src={photos.chessTaxi.url}
+                alt={photos.chessTaxi.alt}
                 className="aspect-[4/5]"
                 rotate={1}
                 loading="eager"
