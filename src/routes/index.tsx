@@ -196,16 +196,16 @@ function Home() {
             </div>
             <div className="col-span-12 md:col-span-4 md:pt-12">
               <QuoteCard
-                src={photos.skip.url}
-                alt={photos.skip.alt}
+                src={photos.jumpRope.url}
+                alt={photos.jumpRope.alt}
                 quote="Every game carries the memory of someone who came before us."
                 tone="ice"
               />
             </div>
             <div className="col-span-12 md:col-span-4">
               <QuoteCard
-                src={photos.chessTaxi.url}
-                alt={photos.chessTaxi.alt}
+                src={photos.clap.url}
+                alt={photos.clap.alt}
                 quote="Maybe adulthood just needs a Second Break."
                 tone="flame"
               />
