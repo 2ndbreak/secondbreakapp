@@ -15,6 +15,7 @@ import { Route as SchoolsRouteImport } from './routes/schools'
 import { Route as ExploreGamesRouteImport } from './routes/explore-games'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as DayRouteImport } from './routes/day'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ArchiveRouteImport } from './routes/archive'
 import { Route as AboutUsRouteImport } from './routes/about-us'
@@ -50,6 +51,11 @@ const EventsRoute = EventsRouteImport.update({
 const DayRoute = DayRouteImport.update({
   id: '/day',
   path: '/day',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AuthRoute = AuthRouteImport.update({
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/about-us': typeof AboutUsRoute
   '/archive': typeof ArchiveRoute
   '/auth': typeof AuthRoute
+  '/contact': typeof ContactRoute
   '/day': typeof DayRoute
   '/events': typeof EventsRoute
   '/explore-games': typeof ExploreGamesRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByTo {
   '/about-us': typeof AboutUsRoute
   '/archive': typeof ArchiveRoute
   '/auth': typeof AuthRoute
+  '/contact': typeof ContactRoute
   '/day': typeof DayRoute
   '/events': typeof EventsRoute
   '/explore-games': typeof ExploreGamesRoute
@@ -118,6 +126,7 @@ export interface FileRoutesById {
   '/about-us': typeof AboutUsRoute
   '/archive': typeof ArchiveRoute
   '/auth': typeof AuthRoute
+  '/contact': typeof ContactRoute
   '/day': typeof DayRoute
   '/events': typeof EventsRoute
   '/explore-games': typeof ExploreGamesRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/archive'
     | '/auth'
+    | '/contact'
     | '/day'
     | '/events'
     | '/explore-games'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/archive'
     | '/auth'
+    | '/contact'
     | '/day'
     | '/events'
     | '/explore-games'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/about-us'
     | '/archive'
     | '/auth'
+    | '/contact'
     | '/day'
     | '/events'
     | '/explore-games'
@@ -177,6 +189,7 @@ export interface RootRouteChildren {
   AboutUsRoute: typeof AboutUsRoute
   ArchiveRoute: typeof ArchiveRoute
   AuthRoute: typeof AuthRoute
+  ContactRoute: typeof ContactRoute
   DayRoute: typeof DayRoute
   EventsRoute: typeof EventsRoute
   ExploreGamesRoute: typeof ExploreGamesRoute
@@ -230,6 +243,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DayRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/auth': {
       id: '/auth'
       path: '/auth'
@@ -281,6 +301,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutUsRoute: AboutUsRoute,
   ArchiveRoute: ArchiveRoute,
   AuthRoute: AuthRoute,
+  ContactRoute: ContactRoute,
   DayRoute: DayRoute,
   EventsRoute: EventsRoute,
   ExploreGamesRoute: ExploreGamesRoute,
