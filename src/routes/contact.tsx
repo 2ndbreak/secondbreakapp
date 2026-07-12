@@ -1,8 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-
-// EDIT ME — replace with your Contact Google Form embed URL
-const GOOGLE_FORM_CONTACT_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSf-REPLACE_CONTACT/viewform?embedded=true";
+import { ContactForm } from "@/components/forms/ContactForm";
 
 // EDIT ME
 const CONTACT_EMAIL = "hello@2ndbreak.co.za";
@@ -70,17 +67,8 @@ function ContactPage() {
           </div>
           <div className="col-span-12 md:col-span-7">
             <h2 className="display text-2xl text-[color:var(--color-plum)]">Send a message</h2>
-            <div className="mt-4 overflow-hidden rounded-md border border-[color:var(--color-plum)]/25 bg-white">
-              <iframe
-                src={GOOGLE_FORM_CONTACT_URL}
-                title="Contact 2nd Break"
-                width="100%"
-                height="1100"
-                loading="lazy"
-                className="block w-full"
-              >
-                Loading form…
-              </iframe>
+            <div className="mt-4">
+              <ContactForm />
             </div>
           </div>
         </div>

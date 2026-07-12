@@ -23,6 +23,7 @@ import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EntrySlugRouteImport } from './routes/entry.$slug'
+import { Route as AdminResponsesRouteImport } from './routes/admin.responses'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -94,6 +95,11 @@ const EntrySlugRoute = EntrySlugRouteImport.update({
   path: '/entry/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminResponsesRoute = AdminResponsesRouteImport.update({
+  id: '/admin/responses',
+  path: '/admin/responses',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -109,6 +115,7 @@ export interface FileRoutesByFullPath {
   '/schools': typeof SchoolsRoute
   '/share': typeof ShareRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin/responses': typeof AdminResponsesRoute
   '/entry/$slug': typeof EntrySlugRoute
 }
 export interface FileRoutesByTo {
@@ -125,6 +132,7 @@ export interface FileRoutesByTo {
   '/schools': typeof SchoolsRoute
   '/share': typeof ShareRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin/responses': typeof AdminResponsesRoute
   '/entry/$slug': typeof EntrySlugRoute
 }
 export interface FileRoutesById {
@@ -142,6 +150,7 @@ export interface FileRoutesById {
   '/schools': typeof SchoolsRoute
   '/share': typeof ShareRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/admin/responses': typeof AdminResponsesRoute
   '/entry/$slug': typeof EntrySlugRoute
 }
 export interface FileRouteTypes {
@@ -160,6 +169,7 @@ export interface FileRouteTypes {
     | '/schools'
     | '/share'
     | '/sitemap.xml'
+    | '/admin/responses'
     | '/entry/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -176,6 +186,7 @@ export interface FileRouteTypes {
     | '/schools'
     | '/share'
     | '/sitemap.xml'
+    | '/admin/responses'
     | '/entry/$slug'
   id:
     | '__root__'
@@ -192,6 +203,7 @@ export interface FileRouteTypes {
     | '/schools'
     | '/share'
     | '/sitemap.xml'
+    | '/admin/responses'
     | '/entry/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -209,6 +221,7 @@ export interface RootRouteChildren {
   SchoolsRoute: typeof SchoolsRoute
   ShareRoute: typeof ShareRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  AdminResponsesRoute: typeof AdminResponsesRoute
   EntrySlugRoute: typeof EntrySlugRoute
 }
 
@@ -312,6 +325,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EntrySlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/responses': {
+      id: '/admin/responses'
+      path: '/admin/responses'
+      fullPath: '/admin/responses'
+      preLoaderRoute: typeof AdminResponsesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -329,18 +349,9 @@ const rootRouteChildren: RootRouteChildren = {
   SchoolsRoute: SchoolsRoute,
   ShareRoute: ShareRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  AdminResponsesRoute: AdminResponsesRoute,
   EntrySlugRoute: EntrySlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
