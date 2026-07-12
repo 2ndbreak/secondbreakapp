@@ -145,69 +145,165 @@ function RootComponent() {
 }
 
 function SiteHeader() {
-  const links = [
-    { to: "/archive", label: "Archive" },
-    { to: "/explore-games", label: "Explore Games" },
-    { to: "/events", label: "Events" },
-    { to: "/about", label: "The Idea" },
-    { to: "/day", label: "2nd Break Day" },
-    { to: "/schools", label: "Schools" },
-    { to: "/share", label: "Share a game" },
-  ] as const;
   const { user, loading } = useAuthSession();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const closeMobile = () => setMobileOpen(false);
+
+  const linkCls =
+    "text-sm font-semibold uppercase tracking-wider text-[color:var(--color-plum)] hover:text-[color:var(--color-flame)] transition-colors";
+  const activeLinkCls = "text-[color:var(--color-flame)]";
+
   return (
-    <header className="sticky top-0 z-40 border-b border-[color:var(--color-plum)]/10 bg-[color:var(--color-paper)]/95 backdrop-blur-none">
-      <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-8">
-        <Link to="/" className="flex items-center gap-3 no-underline">
+    <header className="sticky top-0 z-40 border-b border-[color:var(--color-plum)]/15 bg-[color:var(--color-paper)]/95 backdrop-blur-none">
+      <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-4 py-3 sm:px-8">
+        <Link to="/" className="flex items-center gap-3 no-underline shrink-0" onClick={closeMobile}>
           <BrandMark size={28} color="var(--color-plum)" />
           <span className="display text-lg tracking-tight text-[color:var(--color-plum)]">2nd Break</span>
         </Link>
-        <nav className="hidden flex-wrap items-center gap-1 md:flex">
-          {links.map((l) => (
-            <Link
-              key={l.to}
-              to={l.to}
-              className="rounded-md px-3 py-2 text-sm font-medium uppercase tracking-wider text-[color:var(--color-plum)] transition-colors hover:text-[color:var(--color-flame)]"
-              activeProps={{ className: "rounded-md px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[color:var(--color-flame)] underline underline-offset-8 decoration-2" }}
-            >
-              {l.label}
-            </Link>
-          ))}
+
+        {/* Desktop nav */}
+        <nav className="hidden lg:flex items-center gap-6">
+          <Link to="/archive" className={linkCls} activeProps={{ className: `${linkCls} ${activeLinkCls}` }}>Archive</Link>
+          <Link to="/explore-games" className={linkCls} activeProps={{ className: `${linkCls} ${activeLinkCls}` }}>Explore Games</Link>
+
+          <HeaderDropdown label="Events">
+            <DropdownLink to="/events">Upcoming & Past Events</DropdownLink>
+            <DropdownLink to="/day">2nd Break Day</DropdownLink>
+          </HeaderDropdown>
+
+          <HeaderDropdown label="About">
+            <DropdownLink to="/about-us">About Us</DropdownLink>
+            <DropdownLink to="/about">The Idea</DropdownLink>
+            <DropdownLink to="/schools">For Schools</DropdownLink>
+            <DropdownLink to="/contact">Contact</DropdownLink>
+          </HeaderDropdown>
         </nav>
-        <div className="flex items-center gap-2">
+
+        {/* Right cluster (desktop) */}
+        <div className="hidden lg:flex items-center gap-2 shrink-0">
+          <Link
+            to="/share"
+            className="rounded-md bg-[color:var(--color-flame)] px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-plum)]"
+          >
+            Share a game
+          </Link>
           {!loading && user ? (
-            <>
-              <span className="hidden lg:inline text-xs uppercase tracking-widest text-[color:var(--color-plum)]/70">
-                {user.email}
-              </span>
-              <button
-                onClick={() => supabase.auth.signOut()}
-                className="rounded-md border border-[color:var(--color-plum)]/40 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-plum)] hover:bg-[color:var(--color-plum)] hover:text-[color:var(--color-chartreuse)]"
-              >
-                Log out
-              </button>
-            </>
+            <button
+              onClick={() => supabase.auth.signOut()}
+              className="rounded-md border border-[color:var(--color-plum)]/40 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-plum)] hover:bg-[color:var(--color-plum)] hover:text-[color:var(--color-chartreuse)]"
+            >
+              Log out
+            </button>
           ) : (
             <>
-              <Link
-                to="/auth"
-                search={{ mode: "login" }}
-                className="rounded-md border border-[color:var(--color-plum)]/40 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-plum)] hover:bg-[color:var(--color-plum)] hover:text-[color:var(--color-chartreuse)]"
-              >
-                Log in
-              </Link>
-              <Link
-                to="/auth"
-                search={{ mode: "signup" }}
-                className="rounded-md bg-[color:var(--color-plum)] px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-flame)]"
-              >
-                Sign up
-              </Link>
+              <Link to="/auth" search={{ mode: "login" }} className="rounded-md border border-[color:var(--color-plum)]/40 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-plum)] hover:bg-[color:var(--color-plum)] hover:text-[color:var(--color-chartreuse)]">Log in</Link>
+              <Link to="/auth" search={{ mode: "signup" }} className="rounded-md bg-[color:var(--color-plum)] px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-flame)]">Sign up</Link>
             </>
           )}
         </div>
+
+        {/* Mobile toggle */}
+        <button
+          className="lg:hidden inline-flex items-center justify-center rounded-md border border-[color:var(--color-plum)]/30 p-2 text-[color:var(--color-plum)]"
+          onClick={() => setMobileOpen((v) => !v)}
+          aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
       </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="lg:hidden border-t border-[color:var(--color-plum)]/15 bg-[color:var(--color-paper)]">
+          <nav className="mx-auto flex max-w-[1400px] flex-col px-4 py-4 sm:px-8">
+            <MobileLink to="/archive" onClick={closeMobile}>Archive</MobileLink>
+            <MobileLink to="/explore-games" onClick={closeMobile}>Explore Games</MobileLink>
+            <MobileGroup label="Events">
+              <MobileLink to="/events" onClick={closeMobile} sub>Upcoming & Past Events</MobileLink>
+              <MobileLink to="/day" onClick={closeMobile} sub>2nd Break Day</MobileLink>
+            </MobileGroup>
+            <MobileGroup label="About">
+              <MobileLink to="/about-us" onClick={closeMobile} sub>About Us</MobileLink>
+              <MobileLink to="/about" onClick={closeMobile} sub>The Idea</MobileLink>
+              <MobileLink to="/schools" onClick={closeMobile} sub>For Schools</MobileLink>
+              <MobileLink to="/contact" onClick={closeMobile} sub>Contact</MobileLink>
+            </MobileGroup>
+            <div className="mt-4 flex flex-wrap gap-2 border-t border-[color:var(--color-plum)]/15 pt-4">
+              <Link to="/share" onClick={closeMobile} className="rounded-md bg-[color:var(--color-flame)] px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-chartreuse)]">Share a game</Link>
+              {!loading && user ? (
+                <button onClick={() => { supabase.auth.signOut(); closeMobile(); }} className="rounded-md border border-[color:var(--color-plum)]/40 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-plum)]">Log out</button>
+              ) : (
+                <>
+                  <Link to="/auth" search={{ mode: "login" }} onClick={closeMobile} className="rounded-md border border-[color:var(--color-plum)]/40 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-plum)]">Log in</Link>
+                  <Link to="/auth" search={{ mode: "signup" }} onClick={closeMobile} className="rounded-md bg-[color:var(--color-plum)] px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-chartreuse)]">Sign up</Link>
+                </>
+              )}
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
+  );
+}
+
+function HeaderDropdown({ label, children }: { label: string; children: ReactNode }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center gap-1 text-sm font-semibold uppercase tracking-wider text-[color:var(--color-plum)] hover:text-[color:var(--color-flame)]"
+        aria-expanded={open}
+      >
+        {label}
+        <svg width="10" height="10" viewBox="0 0 12 12" fill="currentColor" aria-hidden="true"><path d="M2 4l4 4 4-4z"/></svg>
+      </button>
+      {open && (
+        <div className="absolute left-0 top-full min-w-[220px] border border-[color:var(--color-plum)]/20 bg-[color:var(--color-paper)] py-2 shadow-md rounded-md">
+          {children}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function DropdownLink({ to, children }: { to: string; children: ReactNode }) {
+  return (
+    <Link
+      to={to as never}
+      className="block px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-plum)] hover:bg-[color:var(--color-chartreuse)]"
+      activeProps={{ className: "block px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-flame)] bg-[color:var(--color-chartreuse)]/50" }}
+    >
+      {children}
+    </Link>
+  );
+}
+
+function MobileGroup({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div className="py-1">
+      <div className="px-2 pt-3 pb-1 text-[10px] uppercase tracking-widest text-[color:var(--color-plum)]/60">{label}</div>
+      {children}
+    </div>
+  );
+}
+
+function MobileLink({ to, onClick, sub, children }: { to: string; onClick: () => void; sub?: boolean; children: ReactNode }) {
+  return (
+    <Link
+      to={to as never}
+      onClick={onClick}
+      className={`block ${sub ? "pl-4" : ""} py-2 text-sm font-semibold uppercase tracking-wider text-[color:var(--color-plum)] hover:text-[color:var(--color-flame)]`}
+      activeProps={{ className: `block ${sub ? "pl-4" : ""} py-2 text-sm font-semibold uppercase tracking-wider text-[color:var(--color-flame)]` }}
+    >
+      {children}
+    </Link>
   );
 }
 
@@ -215,24 +311,14 @@ function SiteFooter() {
   return (
     <footer className="color-plum grain mt-24">
       <div className="mx-auto max-w-[1400px] px-4 py-20 sm:px-8">
-        <p className="poster text-[color:var(--color-flame)]">
+        <p className="poster-sm text-[color:var(--color-flame)]">
           NO COMPETITION.
           <br />
           NO SPECTATORS.
           <br />
           <span className="text-[color:var(--color-chartreuse)]">JUST PLAY.</span>
         </p>
-        <div className="mt-16 flex flex-wrap items-center gap-6 border-t border-[color:var(--color-ice)]/20 pt-6 text-xs uppercase tracking-widest text-[color:var(--color-ice)]/70">
-          <Link to="/" className="hover:text-[color:var(--color-chartreuse)]">2nd Break</Link>
-          <Link to="/archive" className="hover:text-[color:var(--color-chartreuse)]">Archive</Link>
-          <Link to="/explore-games" className="hover:text-[color:var(--color-chartreuse)]">Explore Games</Link>
-          <Link to="/events" className="hover:text-[color:var(--color-chartreuse)]">Events</Link>
-          <Link to="/about" className="hover:text-[color:var(--color-chartreuse)]">The Idea</Link>
-          <Link to="/day" className="hover:text-[color:var(--color-chartreuse)]">2nd Break Day</Link>
-          <Link to="/schools" className="hover:text-[color:var(--color-chartreuse)]">Schools</Link>
-          <Link to="/share" className="hover:text-[color:var(--color-chartreuse)]">Share a game</Link>
-        </div>
-        <div className="mt-6 flex flex-wrap items-center gap-6 text-xs uppercase tracking-widest text-[color:var(--color-ice)]/70">
+        <div className="mt-12 flex flex-wrap items-center gap-6 border-t border-[color:var(--color-ice)]/20 pt-6 text-xs uppercase tracking-widest text-[color:var(--color-ice)]/70">
           {SOCIALS.map((s) => (
             <a key={s.label} href={s.href} target="_blank" rel="noreferrer noopener" className="hover:text-[color:var(--color-chartreuse)]">
               {s.label}
@@ -241,8 +327,12 @@ function SiteFooter() {
           <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer noopener" className="hover:text-[color:var(--color-chartreuse)]">
             WhatsApp
           </a>
-          <span className="ml-auto flex items-center gap-2">
-            <BrandMark size={16} color="var(--color-chartreuse)" />
+        </div>
+        <div className="mt-6 flex flex-wrap items-center gap-4 text-[11px] uppercase tracking-widest text-[color:var(--color-ice)]/60">
+          <span>© {new Date().getFullYear()} 2nd Break</span>
+          <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-[color:var(--color-chartreuse)]">{CONTACT_EMAIL} <span className="opacity-60">(EDIT ME)</span></a>
+          <span className="ml-auto flex items-center gap-2 text-[color:var(--color-chartreuse)]">
+            <BrandMark size={14} color="var(--color-chartreuse)" />
             Take another break.
           </span>
         </div>
