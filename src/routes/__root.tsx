@@ -330,7 +330,7 @@ function SiteFooter() {
         </div>
         <div className="mt-6 flex flex-wrap items-center gap-4 text-[11px] uppercase tracking-widest text-[color:var(--color-ice)]/60">
           <span>© {new Date().getFullYear()} 2nd Break</span>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-[color:var(--color-chartreuse)]">{CONTACT_EMAIL} <span className="opacity-60">(EDIT ME)</span></a>
+          <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-[color:var(--color-chartreuse)]">{CONTACT_EMAIL}</a>
           <span className="ml-auto flex items-center gap-2 text-[color:var(--color-chartreuse)]">
             <BrandMark size={14} color="var(--color-chartreuse)" />
             Take another break.
