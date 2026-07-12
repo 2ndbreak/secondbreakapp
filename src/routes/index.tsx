@@ -2,10 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { photos, entries } from "@/data/entries";
 import { EntryCard, FramedPhoto, QuoteCard } from "@/components/site";
 import { BrandMark } from "@/components/BrandMark";
-
-// EDIT ME — replace with your published Google Form embed URL
-const GOOGLE_FORM_JOIN_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSf-REPLACE_JOIN/viewform?embedded=true";
+import { SignupForm } from "@/components/SignupForm";
 
 export const Route = createFileRoute("/")({
   component: Home,
