@@ -2,10 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { photos, entries } from "@/data/entries";
 import { EntryCard, FramedPhoto, QuoteCard } from "@/components/site";
 import { BrandMark } from "@/components/BrandMark";
-
-// EDIT ME — replace with your published Google Form embed URL
-const GOOGLE_FORM_JOIN_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSf-REPLACE_JOIN/viewform?embedded=true";
+import { SignupForm } from "@/components/SignupForm";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -16,53 +13,55 @@ function Home() {
   const storySunday = entries.find((e) => e.type === "folktale")!;
   return (
     <>
-      {/* HERO — plum poster, photo alongside (no overlap, no bleeding type) */}
+      {/* HERO — plum poster. Full-width headline sits above photo; photo aligns with "HOW TO" line */}
       <section className="color-plum grain">
-        <div className="mx-auto grid max-w-[1500px] grid-cols-12 gap-10 px-4 py-16 sm:px-8 sm:py-24">
-          <div className="col-span-12 md:col-span-7">
-            <div className="flex items-center gap-3 text-[color:var(--color-chartreuse)]">
-              <BrandMark size={22} color="var(--color-chartreuse)" />
-              <span className="text-xs uppercase tracking-[0.25em]">Take Another Break</span>
-            </div>
-            <h1 className="poster mt-6 text-[color:var(--color-flame)]">
-              <span className="block whitespace-nowrap">REMEMBER</span>
-              <span className="block whitespace-nowrap text-[color:var(--color-chartreuse)]">HOW TO</span>
-              <span className="block whitespace-nowrap">PLAY?</span>
-            </h1>
-            <p className="mt-8 max-w-lg text-lg leading-relaxed text-[color:var(--color-ice)]/90">
-              Rediscover indigenous games, stories & childhood wonder — every break has a story.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link
-                to="/archive"
-                className="inline-flex items-center gap-2 rounded-md bg-[color:var(--color-flame)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] transition-colors hover:bg-[color:var(--color-chartreuse)] hover:text-[color:var(--color-plum)]"
-              >
-                Explore the archive
-              </Link>
-              <Link
-                to="/explore-games"
-                className="inline-flex items-center gap-2 rounded-md bg-[color:var(--color-chartreuse)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] transition-colors hover:bg-[color:var(--color-ice)]"
-              >
-                Explore games (videos)
-              </Link>
-              <Link
-                to="/share"
-                className="inline-flex items-center gap-2 rounded-md border border-[color:var(--color-ice)]/50 px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-ice)] transition-colors hover:border-[color:var(--color-chartreuse)] hover:text-[color:var(--color-chartreuse)]"
-              >
-                Share a game
-              </Link>
-            </div>
+        <div className="mx-auto max-w-[1500px] px-4 py-16 sm:px-8 sm:py-24">
+          <div className="flex items-center gap-3 text-[color:var(--color-chartreuse)]">
+            <BrandMark size={22} color="var(--color-chartreuse)" />
+            <span className="text-xs uppercase tracking-[0.25em]">Take Another Break</span>
           </div>
-          <div className="col-span-12 md:col-span-5">
-            <FramedPhoto
-              src={photos.skip.url}
-              alt={photos.skip.alt}
-              className="aspect-[4/5]"
-              rotate={1}
-              loading="eager"
-              width={900}
-              height={1125}
-            />
+          <h1 className="poster mt-6 text-[color:var(--color-flame)]">
+            <span className="block whitespace-nowrap">REMEMBER</span>
+            <span className="block whitespace-nowrap text-[color:var(--color-chartreuse)]">HOW TO</span>
+            <span className="block whitespace-nowrap">PLAY?</span>
+          </h1>
+          <div className="mt-10 grid grid-cols-12 gap-10">
+            <div className="col-span-12 md:col-span-7">
+              <p className="max-w-lg text-lg leading-relaxed text-[color:var(--color-ice)]/90">
+                Rediscover indigenous games, stories & childhood wonder — every break has a story.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  to="/archive"
+                  className="inline-flex items-center gap-2 rounded-md bg-[color:var(--color-flame)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] transition-colors hover:bg-[color:var(--color-chartreuse)] hover:text-[color:var(--color-plum)]"
+                >
+                  Explore the archive
+                </Link>
+                <Link
+                  to="/explore-games"
+                  className="inline-flex items-center gap-2 rounded-md bg-[color:var(--color-chartreuse)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] transition-colors hover:bg-[color:var(--color-ice)]"
+                >
+                  Explore games (videos)
+                </Link>
+                <Link
+                  to="/share"
+                  className="inline-flex items-center gap-2 rounded-md border border-[color:var(--color-ice)]/50 px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-ice)] transition-colors hover:border-[color:var(--color-chartreuse)] hover:text-[color:var(--color-chartreuse)]"
+                >
+                  Share a game
+                </Link>
+              </div>
+            </div>
+            <div className="col-span-12 md:col-span-5">
+              <FramedPhoto
+                src={photos.jumpRope.url}
+                alt={photos.jumpRope.alt}
+                className="aspect-[4/5]"
+                rotate={1}
+                loading="eager"
+                width={900}
+                height={1125}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -125,7 +124,7 @@ function Home() {
               </div>
               <Link to="/entry/$slug" params={{ slug: storySunday.slug }} className="mt-6 block group no-underline">
                 <div className="frame aspect-[4/3] w-full overflow-hidden">
-                  <img src={photos.chessTaxi.url} alt="An elder deep in memory at the taxi rank" loading="lazy" className="h-full w-full object-cover transition-[filter] duration-300 group-hover:brightness-95" />
+                  <img src={photos.diketoTop.url} alt={photos.diketoTop.alt} loading="lazy" className="h-full w-full object-cover transition-[filter] duration-300 group-hover:brightness-95" />
                 </div>
                 <h3 className="display mt-5 text-3xl sm:text-4xl text-[color:var(--color-plum)] group-hover:text-[color:var(--color-flame)] transition-colors">
                   {storySunday.title_home}
@@ -189,24 +188,24 @@ function Home() {
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-12 md:col-span-4">
               <QuoteCard
-                src={photos.chessTaxi.url}
-                alt="An elder mid-story, looking down at the game"
+                src={photos.diketoYard.url}
+                alt={photos.diketoYard.alt}
                 quote="Some knowledge is passed down. Other knowledge is passed around."
                 tone="chartreuse"
               />
             </div>
             <div className="col-span-12 md:col-span-4 md:pt-12">
               <QuoteCard
-                src={photos.clap.url}
-                alt="Two friends playing hand-clap, faces close"
+                src={photos.skip.url}
+                alt={photos.skip.alt}
                 quote="Every game carries the memory of someone who came before us."
                 tone="ice"
               />
             </div>
             <div className="col-span-12 md:col-span-4">
               <QuoteCard
-                src={photos.cards.url}
-                alt="Friends gathered on the floor mid-game"
+                src={photos.chessTaxi.url}
+                alt={photos.chessTaxi.alt}
                 quote="Maybe adulthood just needs a Second Break."
                 tone="flame"
               />
@@ -223,15 +222,8 @@ function Home() {
             <h2 className="display mt-4 text-3xl sm:text-5xl leading-[1.05] text-[color:var(--color-chartreuse)]">
               A new game, a new story, in your inbox every fortnight.
             </h2>
-            <div className="mt-8 max-w-lg overflow-hidden rounded-md border border-[color:var(--color-chartreuse)]/40 bg-white">
-              <iframe
-                src={GOOGLE_FORM_JOIN_URL}
-                title="Join the playground"
-                width="100%"
-                height="520"
-                loading="lazy"
-                className="block w-full"
-              >Loading form…</iframe>
+            <div className="mt-8 max-w-lg">
+              <SignupForm source="home" showMessage messageLabel="Anything else? (optional)" submitLabel="Join the playground" tone="plum" />
             </div>
           </div>
           <div className="col-span-12 md:col-span-5">
