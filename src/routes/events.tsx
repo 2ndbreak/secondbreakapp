@@ -1,10 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { FramedPhoto } from "@/components/site";
 import { photos } from "@/data/entries";
-
-// EDIT ME — replace with your Host-a-Break Google Form embed URL
-const GOOGLE_FORM_HOST_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSf-REPLACE_HOST/viewform?embedded=true";
+import { HostBreakForm } from "@/components/forms/HostBreakForm";
 
 type Event = {
   slug: string;
@@ -155,8 +152,8 @@ function EventsPage() {
         <div className="mx-auto max-w-3xl px-4 py-20 sm:px-8">
           <h2 className="display text-3xl sm:text-5xl text-[color:var(--color-chartreuse)]">Host a break in your neighbourhood.</h2>
           <p className="mt-6 text-[color:var(--color-ice)]/85">Schools, workplaces, parks, ranks, blocks — anywhere people already gather. Fill in the form and we'll help you set it up.</p>
-          <div className="mt-8 overflow-hidden rounded-md bg-white">
-            <iframe src={GOOGLE_FORM_HOST_URL} title="Host a break" width="100%" height="900" loading="lazy" className="block w-full">Loading form…</iframe>
+          <div className="mt-8">
+            <HostBreakForm />
           </div>
           <p className="mt-4 text-xs text-[color:var(--color-ice)]/60">Prefer the full 2nd Break Day details? <Link to="/day" className="underline">Read more here</Link>.</p>
         </div>
