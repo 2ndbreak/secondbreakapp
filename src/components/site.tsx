@@ -77,9 +77,9 @@ export function EntryCard({ entry, index }: { entry: Entry; index: number }) {
     entry.slug === "morabaraba"
       ? photos.chessSuits
       : entry.slug === "diketo"
-      ? photos.skip
+      ? photos.diketoYard
       : entry.slug === "hare-and-the-baboons"
-      ? photos.chessTaxi
+      ? photos.cards
       : fallbackPhoto(entry.category);
 
   const num = String(index + 1).padStart(2, "0");

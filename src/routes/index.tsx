@@ -51,10 +51,10 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div className="col-span-12 md:col-span-5">
+            <div className="col-span-12 md:col-span-5 md:pt-[9vw] lg:pt-[7vw]">
               <FramedPhoto
-                src={photos.jumpRope.url}
-                alt={photos.jumpRope.alt}
+                src={photos.chessTaxi.url}
+                alt={photos.chessTaxi.alt}
                 className="aspect-[4/5]"
                 rotate={1}
                 loading="eager"
@@ -124,7 +124,7 @@ function Home() {
               </div>
               <Link to="/entry/$slug" params={{ slug: storySunday.slug }} className="mt-6 block group no-underline">
                 <div className="frame aspect-[4/3] w-full overflow-hidden">
-                  <img src={photos.diketoTop.url} alt={photos.diketoTop.alt} loading="lazy" className="h-full w-full object-cover transition-[filter] duration-300 group-hover:brightness-95" />
+                  <img src={photos.cards.url} alt={photos.cards.alt} loading="lazy" className="h-full w-full object-cover transition-[filter] duration-300 group-hover:brightness-95" />
                 </div>
                 <h3 className="display mt-5 text-3xl sm:text-4xl text-[color:var(--color-plum)] group-hover:text-[color:var(--color-flame)] transition-colors">
                   {storySunday.title_home}
@@ -173,8 +173,8 @@ function Home() {
           </div>
           <div className="col-span-12 md:col-span-5">
             <FramedPhoto
-              src={photos.cards.url}
-              alt="Friends gathered on the floor mid-game"
+              src={photos.diketoTop.url}
+              alt={photos.diketoTop.alt}
               className="aspect-[4/5]"
               rotate={-1.5}
             />
@@ -196,16 +196,16 @@ function Home() {
             </div>
             <div className="col-span-12 md:col-span-4 md:pt-12">
               <QuoteCard
-                src={photos.skip.url}
-                alt={photos.skip.alt}
+                src={photos.jumpRope.url}
+                alt={photos.jumpRope.alt}
                 quote="Every game carries the memory of someone who came before us."
                 tone="ice"
               />
             </div>
             <div className="col-span-12 md:col-span-4">
               <QuoteCard
-                src={photos.chessTaxi.url}
-                alt={photos.chessTaxi.alt}
+                src={photos.clap.url}
+                alt={photos.clap.alt}
                 quote="Maybe adulthood just needs a Second Break."
                 tone="flame"
               />
