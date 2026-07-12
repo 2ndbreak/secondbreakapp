@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "76a9cc26-24b8-40bc-82c4-28b7917fdb5f",
-  "project_id": "3ffd28ad-4835-42b1-9738-31a3ef48728f",
-  "url": "/__l5e/assets-v1/76a9cc26-24b8-40bc-82c4-28b7917fdb5f/jump-rope-group.jpg",
-  "r2_key": "a/v1/3ffd28ad-4835-42b1-9738-31a3ef48728f/76a9cc26-24b8-40bc-82c4-28b7917fdb5f/jump-rope-group.jpg",
-  "original_filename": "jump-rope-group.jpg",
-  "size": 312794,
   "content_type": "image/jpeg",
-  "created_at": "2026-07-12T08:06:09Z"
+  "created_at": "2026-07-12T08:06:09Z",
+  "original_filename": "jump-rope-group.jpg",
+  "project_id": "b6db6a74-652b-45e8-8605-55aabcaa9b75",
+  "r2_key": "a/v1/b6db6a74-652b-45e8-8605-55aabcaa9b75/76a9cc26-24b8-40bc-82c4-28b7917fdb5f/jump-rope-group.jpg",
+  "size": 312794,
+  "url": "/__l5e/assets-v1/76a9cc26-24b8-40bc-82c4-28b7917fdb5f/jump-rope-group.jpg",
+  "version": 1
 }
