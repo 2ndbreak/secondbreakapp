@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShareRouteImport } from './routes/share'
 import { Route as SchoolsRouteImport } from './routes/schools'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ExploreGamesRouteImport } from './routes/explore-games'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as DayRouteImport } from './routes/day'
@@ -36,6 +37,11 @@ const ShareRoute = ShareRouteImport.update({
 const SchoolsRoute = SchoolsRouteImport.update({
   id: '/schools',
   path: '/schools',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExploreGamesRoute = ExploreGamesRouteImport.update({
@@ -99,6 +105,7 @@ export interface FileRoutesByFullPath {
   '/day': typeof DayRoute
   '/events': typeof EventsRoute
   '/explore-games': typeof ExploreGamesRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/schools': typeof SchoolsRoute
   '/share': typeof ShareRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -114,6 +121,7 @@ export interface FileRoutesByTo {
   '/day': typeof DayRoute
   '/events': typeof EventsRoute
   '/explore-games': typeof ExploreGamesRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/schools': typeof SchoolsRoute
   '/share': typeof ShareRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -130,6 +138,7 @@ export interface FileRoutesById {
   '/day': typeof DayRoute
   '/events': typeof EventsRoute
   '/explore-games': typeof ExploreGamesRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/schools': typeof SchoolsRoute
   '/share': typeof ShareRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -147,6 +156,7 @@ export interface FileRouteTypes {
     | '/day'
     | '/events'
     | '/explore-games'
+    | '/reset-password'
     | '/schools'
     | '/share'
     | '/sitemap.xml'
@@ -162,6 +172,7 @@ export interface FileRouteTypes {
     | '/day'
     | '/events'
     | '/explore-games'
+    | '/reset-password'
     | '/schools'
     | '/share'
     | '/sitemap.xml'
@@ -177,6 +188,7 @@ export interface FileRouteTypes {
     | '/day'
     | '/events'
     | '/explore-games'
+    | '/reset-password'
     | '/schools'
     | '/share'
     | '/sitemap.xml'
@@ -193,6 +205,7 @@ export interface RootRouteChildren {
   DayRoute: typeof DayRoute
   EventsRoute: typeof EventsRoute
   ExploreGamesRoute: typeof ExploreGamesRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   SchoolsRoute: typeof SchoolsRoute
   ShareRoute: typeof ShareRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -220,6 +233,13 @@ declare module '@tanstack/react-router' {
       path: '/schools'
       fullPath: '/schools'
       preLoaderRoute: typeof SchoolsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/explore-games': {
@@ -305,6 +325,7 @@ const rootRouteChildren: RootRouteChildren = {
   DayRoute: DayRoute,
   EventsRoute: EventsRoute,
   ExploreGamesRoute: ExploreGamesRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   SchoolsRoute: SchoolsRoute,
   ShareRoute: ShareRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
