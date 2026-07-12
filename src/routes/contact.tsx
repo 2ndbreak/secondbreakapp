@@ -1,8 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-
-// EDIT ME — replace with your Contact Google Form embed URL
-const GOOGLE_FORM_CONTACT_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSf-REPLACE_CONTACT/viewform?embedded=true";
+import { ContactForm } from "@/components/forms/ContactForm";
 
 // EDIT ME
 const CONTACT_EMAIL = "hello@2ndbreak.co.za";

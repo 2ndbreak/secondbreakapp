@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { photos, entries } from "@/data/entries";
 import { EntryCard, FramedPhoto, QuoteCard } from "@/components/site";
 import { BrandMark } from "@/components/BrandMark";
-import { SignupForm } from "@/components/SignupForm";
+import { PlaygroundSignupForm } from "@/components/forms/PlaygroundSignupForm";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -223,7 +223,7 @@ function Home() {
               A new game, a new story, in your inbox every fortnight.
             </h2>
             <div className="mt-8 max-w-lg">
-              <SignupForm source="home" showMessage messageLabel="Anything else? (optional)" submitLabel="Join the playground" tone="plum" />
+              <PlaygroundSignupForm />
             </div>
           </div>
           <div className="col-span-12 md:col-span-5">
