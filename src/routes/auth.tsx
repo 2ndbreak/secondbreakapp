@@ -58,7 +58,7 @@ function AuthPage() {
           <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-flame)]">
             {mode === "signup" ? "Sign up" : "Log in"}
           </p>
-          <h1 className="poster mt-4 text-[color:var(--color-plum)] break-words">
+          <h1 className="poster mt-4 text-[color:var(--color-plum)] ">
             {mode === "signup" ? "Join the playground." : "Welcome back."}
           </h1>
           <p className="mt-6 max-w-md text-[color:var(--color-plum)]/80">
