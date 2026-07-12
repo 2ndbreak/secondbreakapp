@@ -3,6 +3,10 @@ import { photos, entries } from "@/data/entries";
 import { EntryCard, FramedPhoto, QuoteCard } from "@/components/site";
 import { BrandMark } from "@/components/BrandMark";
 
+// EDIT ME — replace with your published Google Form embed URL
+const GOOGLE_FORM_JOIN_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSf-REPLACE_JOIN/viewform?embedded=true";
+
 export const Route = createFileRoute("/")({
   component: Home,
 });
@@ -20,12 +24,10 @@ function Home() {
               <BrandMark size={22} color="var(--color-chartreuse)" />
               <span className="text-xs uppercase tracking-[0.25em]">Take Another Break</span>
             </div>
-            <h1 className="poster mt-6 text-[color:var(--color-flame)] break-words">
-              REMEMBER
-              <br />
-              <span className="text-[color:var(--color-chartreuse)]">HOW TO</span>
-              <br />
-              <span className="block">PLAY?</span>
+            <h1 className="poster mt-6 text-[color:var(--color-flame)]">
+              <span className="block whitespace-nowrap">REMEMBER</span>
+              <span className="block whitespace-nowrap text-[color:var(--color-chartreuse)]">HOW TO</span>
+              <span className="block whitespace-nowrap">PLAY?</span>
             </h1>
             <p className="mt-8 max-w-lg text-lg leading-relaxed text-[color:var(--color-ice)]/90">
               Rediscover indigenous games, stories & childhood wonder — every break has a story.
@@ -218,31 +220,19 @@ function Home() {
         <div className="mx-auto grid max-w-[1400px] grid-cols-12 gap-10 px-4 py-24 sm:px-8">
           <div className="col-span-12 md:col-span-7">
             <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-chartreuse)]">Join the playground</p>
-            <h2 className="display mt-4 text-4xl sm:text-6xl leading-[0.95] text-[color:var(--color-chartreuse)]">
+            <h2 className="display mt-4 text-3xl sm:text-5xl leading-[1.05] text-[color:var(--color-chartreuse)]">
               A new game, a new story, in your inbox every fortnight.
             </h2>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                alert("Thanks — we'll be in touch.");
-              }}
-              className="mt-8 flex max-w-lg flex-col gap-3 sm:flex-row"
-            >
-              <label htmlFor="email" className="sr-only">Email address</label>
-              <input
-                id="email"
-                type="email"
-                required
-                placeholder="you@somewhere.co.za"
-                className="w-full rounded-md border border-[color:var(--color-chartreuse)]/60 bg-transparent px-4 py-3 text-[color:var(--color-chartreuse)] placeholder:text-[color:var(--color-chartreuse)]/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-chartreuse)]"
-              />
-              <button
-                type="submit"
-                className="rounded-md bg-[color:var(--color-plum)] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-chartreuse)] hover:text-[color:var(--color-plum)]"
-              >
-                Join
-              </button>
-            </form>
+            <div className="mt-8 max-w-lg overflow-hidden rounded-md border border-[color:var(--color-chartreuse)]/40 bg-white">
+              <iframe
+                src={GOOGLE_FORM_JOIN_URL}
+                title="Join the playground"
+                width="100%"
+                height="520"
+                loading="lazy"
+                className="block w-full"
+              >Loading form…</iframe>
+            </div>
           </div>
           <div className="col-span-12 md:col-span-5">
             <FramedPhoto

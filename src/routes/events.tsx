@@ -2,6 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { FramedPhoto } from "@/components/site";
 import { photos } from "@/data/entries";
 
+// EDIT ME — replace with your Host-a-Break Google Form embed URL
+const GOOGLE_FORM_HOST_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSf-REPLACE_HOST/viewform?embedded=true";
+
 type Event = {
   slug: string;
   title: string;
@@ -83,7 +87,7 @@ function EventsPage() {
         <div className="mx-auto grid max-w-[1400px] grid-cols-12 gap-10 px-4 py-20 sm:px-8">
           <div className="col-span-12 md:col-span-7">
             <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-chartreuse)]">Events</p>
-            <h1 className="poster mt-4 text-[color:var(--color-chartreuse)] break-words">
+            <h1 className="poster mt-4 text-[color:var(--color-chartreuse)]">
               Where we're<br />playing next.
             </h1>
             <p className="mt-6 max-w-lg text-lg text-[color:var(--color-chartreuse)]/90">
@@ -148,14 +152,13 @@ function EventsPage() {
       </section>
 
       <section className="color-plum grain">
-        <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-8">
+        <div className="mx-auto max-w-3xl px-4 py-20 sm:px-8">
           <h2 className="display text-3xl sm:text-5xl text-[color:var(--color-chartreuse)]">Host a break in your neighbourhood.</h2>
-          <p className="mt-6 text-[color:var(--color-ice)]/85">Schools, workplaces, parks, ranks, blocks — anywhere people already gather. We'll help you set it up.</p>
-          <div className="mt-8">
-            <Link to="/day" className="inline-flex rounded-md bg-[color:var(--color-flame)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-chartreuse)] hover:text-[color:var(--color-plum)]">
-              Get in touch
-            </Link>
+          <p className="mt-6 text-[color:var(--color-ice)]/85">Schools, workplaces, parks, ranks, blocks — anywhere people already gather. Fill in the form and we'll help you set it up.</p>
+          <div className="mt-8 overflow-hidden rounded-md bg-white">
+            <iframe src={GOOGLE_FORM_HOST_URL} title="Host a break" width="100%" height="900" loading="lazy" className="block w-full">Loading form…</iframe>
           </div>
+          <p className="mt-4 text-xs text-[color:var(--color-ice)]/60">Prefer the full 2nd Break Day details? <Link to="/day" className="underline">Read more here</Link>.</p>
         </div>
       </section>
     </>

@@ -86,7 +86,7 @@ function ExploreGamesPage() {
       <section className="color-chartreuse">
         <div className="mx-auto max-w-[1400px] px-4 py-16 sm:px-8">
           <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-plum)]/70">Explore Games</p>
-          <h1 className="poster mt-4 text-[color:var(--color-plum)] break-words">
+          <h1 className="poster mt-4 text-[color:var(--color-plum)] ">
             Watch. Learn.<br />
             <span className="text-[color:var(--color-flame)]">Then go play.</span>
           </h1>

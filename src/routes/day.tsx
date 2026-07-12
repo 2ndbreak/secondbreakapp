@@ -2,6 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { FramedPhoto } from "@/components/site";
 import { photos } from "@/data/entries";
 
+// EDIT ME — replace with your Host-a-Break Google Form embed URL
+const GOOGLE_FORM_HOST_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLSf-REPLACE_HOST/viewform?embedded=true";
+
 export const Route = createFileRoute("/day")({
   head: () => ({
     meta: [
@@ -60,17 +64,11 @@ function DayPage() {
             <p className="mt-4 text-[color:var(--color-plum)]/70">Join the mailing list on the home page to hear first.</p>
           </div>
           <div className="col-span-12 md:col-span-6">
-            <form onSubmit={(e) => { e.preventDefault(); alert("Thanks — we'll reach out."); }} className="space-y-4 rounded-md border border-[color:var(--color-plum)]/25 p-6">
-              <h3 className="display text-2xl text-[color:var(--color-plum)]">Host a break</h3>
-              <p className="text-sm text-[color:var(--color-plum)]/70">Tell us where you'd bring 2nd Break Day. School, workplace, park, rank, block — anywhere.</p>
-              <input required placeholder="Your name" className="w-full rounded-md border border-[color:var(--color-plum)]/30 bg-transparent px-3 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-flame)]" />
-              <input required type="email" placeholder="Email" className="w-full rounded-md border border-[color:var(--color-plum)]/30 bg-transparent px-3 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-flame)]" />
-              <input placeholder="Where would you host it?" className="w-full rounded-md border border-[color:var(--color-plum)]/30 bg-transparent px-3 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-flame)]" />
-              <textarea rows={3} placeholder="Tell us more (optional)" className="w-full rounded-md border border-[color:var(--color-plum)]/30 bg-transparent px-3 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-flame)]" />
-              <button type="submit" className="rounded-md bg-[color:var(--color-plum)] px-5 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-flame)]">
-                Register interest
-              </button>
-            </form>
+            <h3 className="display text-2xl text-[color:var(--color-plum)]">Host a break</h3>
+            <p className="mt-2 text-sm text-[color:var(--color-plum)]/70">Tell us where you'd bring 2nd Break Day. School, workplace, park, rank, block — anywhere.</p>
+            <div className="mt-4 overflow-hidden rounded-md border border-[color:var(--color-plum)]/25 bg-white">
+              <iframe src={GOOGLE_FORM_HOST_URL} title="Host a break" width="100%" height="900" loading="lazy" className="block w-full">Loading form…</iframe>
+            </div>
           </div>
         </div>
       </section>

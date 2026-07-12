@@ -54,7 +54,7 @@ export function QuoteCard({ src, alt, quote, tone = "chartreuse", rotate }: Quot
         <img src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
       </div>
       <figcaption className={`${bg} p-6`}>
-        <blockquote className="display text-xl sm:text-2xl leading-[1.05] break-words">
+        <blockquote className="display text-xl sm:text-2xl leading-[1.05] ">
           {quote}
         </blockquote>
       </figcaption>
