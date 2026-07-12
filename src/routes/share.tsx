@@ -43,24 +43,7 @@ function SharePage() {
 
       <section className="color-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 sm:px-8">
-          <div className="rounded-md border border-[color:var(--color-plum)]/20 bg-white overflow-hidden">
-            <iframe
-              src={GOOGLE_FORM_EMBED_URL}
-              title="2nd Break — Share a game or story"
-              width="100%"
-              height="1400"
-              frameBorder={0}
-              marginHeight={0}
-              marginWidth={0}
-              loading="lazy"
-              className="block w-full"
-            >
-              Loading form…
-            </iframe>
-          </div>
-          <p className="mt-4 text-xs text-[color:var(--color-plum)]/60">
-            Trouble seeing the form? <a className="underline" href={GOOGLE_FORM_EMBED_URL.replace("?embedded=true", "")} target="_blank" rel="noreferrer noopener">Open it in a new tab</a>.
-          </p>
+          <ShareForm />
         </div>
       </section>
     </>
