@@ -188,24 +188,24 @@ function Home() {
           <div className="grid grid-cols-12 gap-6">
             <div className="col-span-12 md:col-span-4">
               <QuoteCard
-                src={photos.chessTaxi.url}
-                alt="An elder mid-story, looking down at the game"
+                src={photos.diketoYard.url}
+                alt={photos.diketoYard.alt}
                 quote="Some knowledge is passed down. Other knowledge is passed around."
                 tone="chartreuse"
               />
             </div>
             <div className="col-span-12 md:col-span-4 md:pt-12">
               <QuoteCard
-                src={photos.clap.url}
-                alt="Two friends playing hand-clap, faces close"
+                src={photos.skip.url}
+                alt={photos.skip.alt}
                 quote="Every game carries the memory of someone who came before us."
                 tone="ice"
               />
             </div>
             <div className="col-span-12 md:col-span-4">
               <QuoteCard
-                src={photos.cards.url}
-                alt="Friends gathered on the floor mid-game"
+                src={photos.chessTaxi.url}
+                alt={photos.chessTaxi.alt}
                 quote="Maybe adulthood just needs a Second Break."
                 tone="flame"
               />
