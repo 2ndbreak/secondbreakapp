@@ -20,12 +20,10 @@ function Home() {
               <BrandMark size={22} color="var(--color-chartreuse)" />
               <span className="text-xs uppercase tracking-[0.25em]">Take Another Break</span>
             </div>
-            <h1 className="poster mt-6 text-[color:var(--color-flame)] break-words">
-              REMEMBER
-              <br />
-              <span className="text-[color:var(--color-chartreuse)]">HOW TO</span>
-              <br />
-              <span className="block">PLAY?</span>
+            <h1 className="poster mt-6 text-[color:var(--color-flame)]">
+              <span className="block whitespace-nowrap">REMEMBER</span>
+              <span className="block whitespace-nowrap text-[color:var(--color-chartreuse)]">HOW TO</span>
+              <span className="block whitespace-nowrap">PLAY?</span>
             </h1>
             <p className="mt-8 max-w-lg text-lg leading-relaxed text-[color:var(--color-ice)]/90">
               Rediscover indigenous games, stories & childhood wonder — every break has a story.
