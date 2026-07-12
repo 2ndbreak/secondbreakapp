@@ -17,6 +17,7 @@ import { Route as EventsRouteImport } from './routes/events'
 import { Route as DayRouteImport } from './routes/day'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as ArchiveRouteImport } from './routes/archive'
+import { Route as AboutUsRouteImport } from './routes/about-us'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as EntrySlugRouteImport } from './routes/entry.$slug'
@@ -61,6 +62,11 @@ const ArchiveRoute = ArchiveRouteImport.update({
   path: '/archive',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutUsRoute = AboutUsRouteImport.update({
+  id: '/about-us',
+  path: '/about-us',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -80,6 +86,7 @@ const EntrySlugRoute = EntrySlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/about-us': typeof AboutUsRoute
   '/archive': typeof ArchiveRoute
   '/auth': typeof AuthRoute
   '/day': typeof DayRoute
@@ -93,6 +100,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/about-us': typeof AboutUsRoute
   '/archive': typeof ArchiveRoute
   '/auth': typeof AuthRoute
   '/day': typeof DayRoute
@@ -107,6 +115,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/about-us': typeof AboutUsRoute
   '/archive': typeof ArchiveRoute
   '/auth': typeof AuthRoute
   '/day': typeof DayRoute
@@ -122,6 +131,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/about-us'
     | '/archive'
     | '/auth'
     | '/day'
@@ -135,6 +145,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/about-us'
     | '/archive'
     | '/auth'
     | '/day'
@@ -148,6 +159,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/about-us'
     | '/archive'
     | '/auth'
     | '/day'
@@ -162,6 +174,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AboutUsRoute: typeof AboutUsRoute
   ArchiveRoute: typeof ArchiveRoute
   AuthRoute: typeof AuthRoute
   DayRoute: typeof DayRoute
@@ -231,6 +244,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ArchiveRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about-us': {
+      id: '/about-us'
+      path: '/about-us'
+      fullPath: '/about-us'
+      preLoaderRoute: typeof AboutUsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -258,6 +278,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AboutUsRoute: AboutUsRoute,
   ArchiveRoute: ArchiveRoute,
   AuthRoute: AuthRoute,
   DayRoute: DayRoute,
