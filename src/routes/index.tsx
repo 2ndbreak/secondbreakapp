@@ -124,7 +124,7 @@ function Home() {
               </div>
               <Link to="/entry/$slug" params={{ slug: storySunday.slug }} className="mt-6 block group no-underline">
                 <div className="frame aspect-[4/3] w-full overflow-hidden">
-                  <img src={photos.chessTaxi.url} alt="An elder deep in memory at the taxi rank" loading="lazy" className="h-full w-full object-cover transition-[filter] duration-300 group-hover:brightness-95" />
+                  <img src={photos.diketoTop.url} alt={photos.diketoTop.alt} loading="lazy" className="h-full w-full object-cover transition-[filter] duration-300 group-hover:brightness-95" />
                 </div>
                 <h3 className="display mt-5 text-3xl sm:text-4xl text-[color:var(--color-plum)] group-hover:text-[color:var(--color-flame)] transition-colors">
                   {storySunday.title_home}
