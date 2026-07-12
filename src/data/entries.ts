@@ -6,6 +6,7 @@ import skipAsset from "@/assets/skipping-street.jpg.asset.json";
 import diketoYardAsset from "@/assets/diketo-yard.jpg.asset.json";
 import jumpRopeAsset from "@/assets/jump-rope-group.jpg.asset.json";
 import diketoTopAsset from "@/assets/diketo-top.png.asset.json";
+import heroJumpRopeAsset from "@/assets/jump-rope-hero.png.asset.json";
 
 export const photos = {
   clap: { url: clapAsset.url, alt: "Two friends playing a hand-clapping game" },
@@ -16,6 +17,7 @@ export const photos = {
   diketoYard: { url: diketoYardAsset.url, alt: "Children playing Diketo with stones in a township yard" },
   jumpRope: { url: jumpRopeAsset.url, alt: "A group of youth playing long-rope skipping at an outdoor games day" },
   diketoTop: { url: diketoTopAsset.url, alt: "Overhead view of two girls playing Diketo, stones between their feet" },
+  heroJumpRope: { url: heroJumpRopeAsset.url, alt: "Children playing skipping rope together on a sunny street" },
 };
 
 export type EntryType = "game" | "folktale";
