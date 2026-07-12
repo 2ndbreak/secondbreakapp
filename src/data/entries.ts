@@ -3,6 +3,9 @@ import chessSuitsAsset from "@/assets/chess-suits.jpg.asset.json";
 import chessTaxiAsset from "@/assets/chess-taxi.jpg.asset.json";
 import cardAsset from "@/assets/card-game.jpg.asset.json";
 import skipAsset from "@/assets/skipping-street.jpg.asset.json";
+import diketoYardAsset from "@/assets/diketo-yard.jpg.asset.json";
+import jumpRopeAsset from "@/assets/jump-rope-group.jpg.asset.json";
+import diketoTopAsset from "@/assets/diketo-top.png.asset.json";
 
 export const photos = {
   clap: { url: clapAsset.url, alt: "Two friends playing a hand-clapping game" },
@@ -10,6 +13,9 @@ export const photos = {
   chessTaxi: { url: chessTaxiAsset.url, alt: "A man deep in a board game at the taxi rank" },
   cards: { url: cardAsset.url, alt: "Friends playing cards on the floor" },
   skip: { url: skipAsset.url, alt: "Children playing skipping rope on a neighbourhood street" },
+  diketoYard: { url: diketoYardAsset.url, alt: "Children playing Diketo with stones in a township yard" },
+  jumpRope: { url: jumpRopeAsset.url, alt: "A group of youth playing long-rope skipping at an outdoor games day" },
+  diketoTop: { url: diketoTopAsset.url, alt: "Overhead view of two girls playing Diketo, stones between their feet" },
 };
 
 export type EntryType = "game" | "folktale";
