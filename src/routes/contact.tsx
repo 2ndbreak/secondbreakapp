@@ -1,8 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ContactForm } from "@/components/forms/ContactForm";
 
-// EDIT ME
-const CONTACT_EMAIL = "hello@2ndbreak.co.za";
+const CONTACT_EMAIL = "HELLO@2NDBREAK.COM";
 
 const SOCIALS = [
   { label: "Instagram", href: "https://instagram.com/" },
@@ -45,7 +44,7 @@ function ContactPage() {
                 <a href={`mailto:${CONTACT_EMAIL}`} className="display mt-2 block text-2xl sm:text-3xl text-[color:var(--color-flame)] hover:underline">
                   {CONTACT_EMAIL}
                 </a>
-                <p className="mt-1 text-xs uppercase tracking-widest text-[color:var(--color-plum)]/50">EDIT ME</p>
+                <p className="mt-1 text-xs uppercase tracking-widest text-[color:var(--color-plum)]/50">{"\n"}</p>
               </div>
               <div className="border-t border-[color:var(--color-plum)]/20 pt-6">
                 <p className="text-xs uppercase tracking-widest text-[color:var(--color-plum)]/60">WhatsApp</p>
