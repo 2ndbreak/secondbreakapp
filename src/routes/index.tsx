@@ -17,7 +17,7 @@ function Home() {
       <section className="color-plum grain">
         <div className="mx-auto max-w-[1500px] px-4 py-16 sm:px-8 sm:py-24">
           <div className="flex items-center gap-3 text-[color:var(--color-chartreuse)]">
-            <BrandMark size={22} color="var(--color-chartreuse)" />
+            <BrandMark size={26} color="#000000" />
             <span className="text-xs uppercase tracking-[0.25em]">Take Another Break</span>
           </div>
           <div className="mt-6 grid grid-cols-12 gap-x-8 gap-y-10">
@@ -51,7 +51,7 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div className="col-span-12 md:col-span-5 md:mt-[calc(9vw*0.9)] lg:mt-[calc(7vw*0.9)]">
+            <div className="col-span-12 md:col-span-5 md:mt-[calc(9vw*0.9+38px)] lg:mt-[calc(7vw*0.9+38px)]">
               <FramedPhoto
                 src={photos.heroJumpRope.url}
                 alt={photos.heroJumpRope.alt}
