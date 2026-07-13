@@ -17,7 +17,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 const WHATSAPP_LINK = "https://whatsapp.com/channel/0029VbCjjfA5kg7AscLqvp2U";
 const SOCIALS = [
-  { label: "Instagram", href: "https://instagram.com/" },
+  { label: "Instagram", href: "https://www.instagram.com/2nd.break?igsh=MW40YjlnMzVnMTRpMw==" },
   { label: "X", href: "https://x.com/" },
   { label: "YouTube", href: "https://youtube.com/" },
   { label: "TikTok", href: "https://www.tiktok.com/@2ndbreak?_r=1&_t=ZS-97v2MZsax3E" },
