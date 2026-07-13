@@ -13,21 +13,21 @@ function Home() {
   const storySunday = entries.find((e) => e.type === "folktale")!;
   return (
     <>
-      {/* HERO — plum poster. Full-width headline sits above photo; photo aligns with "HOW TO" line */}
+      {/* HERO — plum poster. Photo tucked in beside "HOW TO" line, aligned right */}
       <section className="color-plum grain">
         <div className="mx-auto max-w-[1500px] px-4 py-16 sm:px-8 sm:py-24">
           <div className="flex items-center gap-3 text-[color:var(--color-chartreuse)]">
             <BrandMark size={22} color="var(--color-chartreuse)" />
             <span className="text-xs uppercase tracking-[0.25em]">Take Another Break</span>
           </div>
-          <h1 className="poster mt-6 text-[color:var(--color-flame)]">
-            <span className="block whitespace-nowrap">REMEMBER</span>
-            <span className="block whitespace-nowrap text-[color:var(--color-chartreuse)]">HOW TO</span>
-            <span className="block whitespace-nowrap">PLAY?</span>
-          </h1>
-          <div className="mt-10 grid grid-cols-12 gap-10">
+          <div className="mt-6 grid grid-cols-12 gap-x-8 gap-y-10">
             <div className="col-span-12 md:col-span-7">
-              <p className="max-w-lg text-lg leading-relaxed text-[color:var(--color-ice)]/90">
+              <h1 className="poster text-[color:var(--color-flame)]">
+                <span className="block whitespace-nowrap">REMEMBER</span>
+                <span className="block whitespace-nowrap text-[color:var(--color-chartreuse)]">HOW TO</span>
+                <span className="block whitespace-nowrap">PLAY?</span>
+              </h1>
+              <p className="mt-10 max-w-lg text-lg leading-relaxed text-[color:var(--color-ice)]/90">
                 Rediscover indigenous games, stories & childhood wonder — every break has a story.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -51,7 +51,7 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div className="col-span-12 md:col-span-5 md:pt-[9vw] lg:pt-[7vw]">
+            <div className="col-span-12 md:col-span-5 md:mt-[calc(9vw*0.9)] lg:mt-[calc(7vw*0.9)]">
               <FramedPhoto
                 src={photos.heroJumpRope.url}
                 alt={photos.heroJumpRope.alt}

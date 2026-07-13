@@ -22,7 +22,7 @@ function DayPage() {
         <div className="mx-auto grid max-w-[1400px] grid-cols-12 gap-10 px-4 py-24 sm:px-8">
           <div className="col-span-12 md:col-span-7">
             <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-plum)]/70">2nd Break Day</p>
-            <h1 className="poster mt-4 text-[color:var(--color-plum)]">
+            <h1 className="display mt-4 text-[color:var(--color-plum)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               Twice a year,<br />South Africa pauses<br />
               <span className="text-[color:var(--color-flame)]">for one giant playground.</span>
             </h1>
