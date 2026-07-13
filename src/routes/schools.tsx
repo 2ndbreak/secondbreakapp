@@ -21,7 +21,7 @@ function SchoolsPage() {
         <div className="mx-auto grid max-w-[1400px] grid-cols-12 gap-10 px-4 py-24 sm:px-8">
           <div className="col-span-12 md:col-span-7">
             <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-plum)]/60">For Schools</p>
-            <h1 className="poster mt-4 text-[color:var(--color-plum)]">
+            <h1 className="display mt-4 text-[color:var(--color-plum)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
               The curriculum<br />is already asking<br />for this.
             </h1>
             <div className="mt-8 space-y-5 text-lg text-[color:var(--color-plum)]/85">
