@@ -13,21 +13,16 @@ export function BrandMark({ className, size = 24, color = "currentColor", animat
       className={className}
       width={size}
       height={size}
-      viewBox="0 0 64 64"
-      fill="none"
+      viewBox="0 0 100 100"
       aria-hidden="true"
+      style={{ color }}
     >
-      <g fill={color}>
-        {/* top-left small circle */}
-        <circle cx="14" cy="14" r="8" className={animated ? "mark-piece-drift" : ""} style={{ transformOrigin: "14px 14px", animationDelay: "0s" }} />
-        {/* top-right large diamond */}
-        <rect x="32" y="0" width="28" height="28" transform="rotate(45 46 14)" className={animated ? "mark-piece-drift" : ""} style={{ transformOrigin: "46px 14px", animationDelay: "0.3s" }} />
-        {/* bottom-left large diamond */}
-        <rect x="4" y="36" width="28" height="28" transform="rotate(45 18 50)" className={animated ? "mark-piece-drift" : ""} style={{ transformOrigin: "18px 50px", animationDelay: "0.6s" }} />
-        {/* bottom-right small circle */}
-        <circle cx="50" cy="50" r="8" className={animated ? "mark-piece-drift" : ""} style={{ transformOrigin: "50px 50px", animationDelay: "0.9s" }} />
-      </g>
+      <circle cx="30" cy="30" r="11" fill="currentColor" className={animated ? "mark-piece-drift" : ""} style={{ transformOrigin: "30px 30px", animationDelay: "0s" }} />
+      <polygon points="70,14 86,30 70,46 54,30" fill="currentColor" className={animated ? "mark-piece-drift" : ""} style={{ transformOrigin: "70px 30px", animationDelay: "0.3s" }} />
+      <polygon points="30,54 46,70 30,86 14,70" fill="currentColor" className={animated ? "mark-piece-drift" : ""} style={{ transformOrigin: "30px 70px", animationDelay: "0.6s" }} />
+      <circle cx="70" cy="70" r="11" fill="currentColor" className={animated ? "mark-piece-drift" : ""} style={{ transformOrigin: "70px 70px", animationDelay: "0.9s" }} />
     </svg>
   );
 }
+
 
