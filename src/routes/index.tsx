@@ -56,7 +56,7 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div className="col-span-12 md:col-span-5 md:mt-[calc(9vw*0.9+38px)] lg:mt-[calc(7vw*0.9+38px)]">
+            <div className="col-span-12 md:col-span-5 md:mt-[calc(9vw*0.9+38px)] lg:mt-[calc(7vw*0.9+38px)] hero-float">
               <FramedPhoto
                 src={photos.heroJumpRope.url}
                 alt={photos.heroJumpRope.alt}
