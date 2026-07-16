@@ -3,6 +3,9 @@ import { photos, entries } from "@/data/entries";
 import { EntryCard, FramedPhoto, QuoteCard } from "@/components/site";
 import { BrandMark } from "@/components/BrandMark";
 import { PlaygroundSignupForm } from "@/components/forms/PlaygroundSignupForm";
+import kidsCarAsset from "@/assets/kids-car.png.asset.json";
+import groupHugAsset from "@/assets/group-hug.png.asset.json";
+import brandIdentityGif from "@/assets/brand-identity.gif.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Home,
