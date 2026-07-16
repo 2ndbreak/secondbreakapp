@@ -57,15 +57,16 @@ function Home() {
               </div>
             </div>
             <div className="col-span-12 md:col-span-5 md:mt-[calc(9vw*0.9+38px)] lg:mt-[calc(7vw*0.9+38px)]">
-              <FramedPhoto
-                src={photos.heroJumpRope.url}
-                alt={photos.heroJumpRope.alt}
-                className="aspect-[4/5]"
-                rotate={1}
-                loading="eager"
-                width={900}
-                height={1125}
-              />
+              <div className="hero-motion frame aspect-[4/5]" style={{ transform: "rotate(1deg)" }}>
+                <img
+                  src={photos.heroJumpRope.url}
+                  alt={photos.heroJumpRope.alt}
+                  loading="eager"
+                  width={900}
+                  height={1125}
+                  className="h-full w-full object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
