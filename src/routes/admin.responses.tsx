@@ -115,7 +115,7 @@ function AdminResponses() {
           <button
             onClick={downloadCSV}
             disabled={rows.length === 0}
-            className="rounded-md bg-[color:var(--color-plum)] px-5 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] hover:bg-[color:var(--color-flame)] disabled:opacity-40"
+            className="rounded-md bg-[color:var(--color-plum)] px-5 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-flame)] disabled:opacity-40"
           >
             Download CSV
           </button>

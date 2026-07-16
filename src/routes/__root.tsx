@@ -197,7 +197,7 @@ function SiteHeader() {
           ) : (
             <>
               <Link to="/auth" search={{ mode: "login" }} className="rounded-md border border-[color:var(--color-plum)]/40 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-plum)] hover:bg-[color:var(--color-plum)] hover:text-[color:var(--color-chartreuse)]">Log in</Link>
-              <Link to="/auth" search={{ mode: "signup" }} className="rounded-md bg-[color:var(--color-plum)] px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-plum)] hover:bg-[color:var(--color-flame)]">Sign up</Link>
+              <Link to="/auth" search={{ mode: "signup" }} className="rounded-md bg-[color:var(--color-plum)] px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-flame)]">Sign up</Link>
             </>
           )}
         </div>

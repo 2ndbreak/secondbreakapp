@@ -68,7 +68,7 @@ function AboutUsPage() {
         <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-8">
           <p className="display text-2xl sm:text-3xl text-[color:var(--color-plum)]">Want the longer version?</p>
           <div className="mt-6">
-            <Link to="/about" className="inline-flex rounded-md bg-[color:var(--color-plum)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] hover:bg-[color:var(--color-flame)]">
+            <Link to="/about" className="inline-flex rounded-md bg-[color:var(--color-plum)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-flame)]">
               Read the full story
             </Link>
           </div>

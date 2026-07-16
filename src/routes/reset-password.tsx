@@ -63,7 +63,7 @@ function ResetPasswordPage() {
                 className="mt-2 w-full rounded-md border border-[color:var(--color-plum)]/30 bg-transparent px-3 py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[color:var(--color-flame)]" />
             </label>
             <button type="submit" disabled={status.kind === "loading"}
-              className="w-full rounded-md bg-[color:var(--color-plum)] px-5 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] hover:bg-[color:var(--color-flame)] disabled:opacity-60">
+              className="w-full rounded-md bg-[color:var(--color-plum)] px-5 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-flame)] disabled:opacity-60">
               {status.kind === "loading" ? "…" : "Update password"}
             </button>
             {status.kind === "error" && <p className="text-sm text-[color:var(--color-flame)]">{status.msg}</p>}

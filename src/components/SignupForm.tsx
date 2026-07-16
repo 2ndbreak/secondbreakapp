@@ -24,7 +24,7 @@ export function SignupForm({
 
   const btnBg =
     tone === "plum"
-      ? "bg-[color:var(--color-plum)] text-[color:var(--color-plum)] hover:bg-[color:var(--color-flame)]"
+      ? "bg-[color:var(--color-plum)] text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-flame)]"
       : tone === "chartreuse"
       ? "bg-[color:var(--color-chartreuse)] text-[color:var(--color-plum)] hover:bg-[color:var(--color-ice)]"
       : "bg-[color:var(--color-flame)] text-[color:var(--color-plum)] hover:bg-[color:var(--color-plum)]";

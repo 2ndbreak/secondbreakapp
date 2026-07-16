@@ -137,7 +137,7 @@ function AuthPage() {
               <button
                 type="submit"
                 disabled={status.kind === "loading"}
-                className="w-full rounded-md bg-[color:var(--color-plum)] px-5 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] hover:bg-[color:var(--color-flame)] disabled:opacity-60"
+                className="w-full rounded-md bg-[color:var(--color-plum)] px-5 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-flame)] disabled:opacity-60"
               >
                 {status.kind === "loading" ? "…" : submitLabel}
               </button>

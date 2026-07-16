@@ -159,7 +159,7 @@ function EntryPage() {
           </p>
           <button
             onClick={share}
-            className="mt-4 rounded-md bg-[color:var(--color-plum)] px-5 py-3 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-plum)] hover:bg-[color:var(--color-flame)]"
+            className="mt-4 rounded-md bg-[color:var(--color-plum)] px-5 py-3 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-flame)]"
           >
             Copy link
           </button>
