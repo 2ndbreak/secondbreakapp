@@ -182,7 +182,7 @@
 }
 @utility color-flame {
   background-color: var(--color-flame);
-  color: var(--color-chartreuse);
+  color: var(--color-plum);
 }
 @utility color-chartreuse {
   background-color: var(--color-chartreuse);
