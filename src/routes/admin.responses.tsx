@@ -94,7 +94,7 @@ function AdminResponses() {
           </p>
           <div className="mt-8 flex justify-center gap-3">
             {!user ? (
-              <Link to="/auth" className="rounded-md bg-[color:var(--color-flame)] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)]">
+              <Link to="/auth" className="rounded-md bg-[color:var(--color-flame)] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)]">
                 Log in
               </Link>
             ) : null}
@@ -115,7 +115,7 @@ function AdminResponses() {
           <button
             onClick={downloadCSV}
             disabled={rows.length === 0}
-            className="rounded-md bg-[color:var(--color-plum)] px-5 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-flame)] disabled:opacity-40"
+            className="rounded-md bg-[color:var(--color-plum)] px-5 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] hover:bg-[color:var(--color-flame)] disabled:opacity-40"
           >
             Download CSV
           </button>
@@ -127,7 +127,7 @@ function AdminResponses() {
               onClick={() => setTab(t.id)}
               className={`rounded-t-md px-4 py-2 text-sm uppercase tracking-widest ${
                 tab === t.id
-                  ? "bg-[color:var(--color-flame)] text-[color:var(--color-chartreuse)]"
+                  ? "bg-[color:var(--color-flame)] text-[color:var(--color-plum)]"
                   : "text-[color:var(--color-plum)]/70 hover:text-[color:var(--color-plum)]"
               }`}
             >

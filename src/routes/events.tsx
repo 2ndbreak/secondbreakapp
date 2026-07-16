@@ -114,7 +114,7 @@ function EventsPage() {
                 </div>
                 <div className="col-span-12 md:col-span-2 md:text-right">
                   {e.rsvp ? (
-                    <Link to={e.rsvp} className="inline-flex rounded-md bg-[color:var(--color-plum)] px-4 py-3 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-flame)]">
+                    <Link to={e.rsvp} className="inline-flex rounded-md bg-[color:var(--color-plum)] px-4 py-3 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-plum)] hover:bg-[color:var(--color-flame)]">
                       Details
                     </Link>
                   ) : (

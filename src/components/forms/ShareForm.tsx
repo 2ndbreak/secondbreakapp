@@ -159,7 +159,7 @@ export function ShareForm() {
                   onClick={() => upd("kind", k)}
                   className={`rounded-md border px-4 py-3 text-sm uppercase tracking-widest ${
                     form.kind === k
-                      ? "border-[color:var(--color-flame)] bg-[color:var(--color-flame)] text-[color:var(--color-chartreuse)]"
+                      ? "border-[color:var(--color-flame)] bg-[color:var(--color-flame)] text-[color:var(--color-plum)]"
                       : "border-[color:var(--color-plum)]/30 text-[color:var(--color-plum)]"
                   }`}
                 >
@@ -257,7 +257,7 @@ export function ShareForm() {
                   onClick={() => upd("involves_minor", v)}
                   className={`rounded-md border px-4 py-2 text-sm uppercase tracking-widest ${
                     form.involves_minor === v
-                      ? "border-[color:var(--color-flame)] bg-[color:var(--color-flame)] text-[color:var(--color-chartreuse)]"
+                      ? "border-[color:var(--color-flame)] bg-[color:var(--color-flame)] text-[color:var(--color-plum)]"
                       : "border-[color:var(--color-plum)]/30 text-[color:var(--color-plum)]"
                   }`}
                 >
@@ -290,7 +290,7 @@ export function ShareForm() {
           <button
             type="button"
             onClick={next}
-            className="rounded-md bg-[color:var(--color-flame)] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-plum)]"
+            className="rounded-md bg-[color:var(--color-flame)] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] hover:bg-[color:var(--color-plum)]"
           >
             Next
           </button>
@@ -298,7 +298,7 @@ export function ShareForm() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="rounded-md bg-[color:var(--color-flame)] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-plum)] disabled:opacity-60"
+            className="rounded-md bg-[color:var(--color-flame)] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] hover:bg-[color:var(--color-plum)] disabled:opacity-60"
           >
             {status === "loading" ? "Sending…" : "Submit"}
           </button>

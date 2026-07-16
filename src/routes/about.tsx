@@ -80,7 +80,7 @@ function AboutPage() {
               <li>A living digital archive — every entry stays public forever at a permanent URL.</li>
             </ul>
             <div className="mt-10">
-              <Link to="/share" className="inline-flex rounded-md bg-[color:var(--color-flame)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-chartreuse)] hover:text-[color:var(--color-plum)]">
+              <Link to="/share" className="inline-flex rounded-md bg-[color:var(--color-flame)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] hover:bg-[color:var(--color-chartreuse)] hover:text-[color:var(--color-plum)]">
                 Share a game or story
               </Link>
             </div>

@@ -51,7 +51,7 @@ export function PlaygroundSignupForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-4 inline-flex w-full items-center justify-center rounded-md bg-[color:var(--color-plum)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] transition-colors hover:bg-[color:var(--color-flame)] disabled:opacity-60"
+        className="mt-4 inline-flex w-full items-center justify-center rounded-md bg-[color:var(--color-plum)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] transition-colors hover:bg-[color:var(--color-flame)] disabled:opacity-60"
       >
         {status === "loading" ? "Sending…" : "Join the playground"}
       </button>
