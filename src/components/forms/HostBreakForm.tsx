@@ -75,7 +75,7 @@ export function HostBreakForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex w-full items-center justify-center rounded-md bg-[color:var(--color-flame)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] transition-colors hover:bg-[color:var(--color-plum)] disabled:opacity-60"
+        className="inline-flex w-full items-center justify-center rounded-md bg-[color:var(--color-flame)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] transition-colors hover:bg-[color:var(--color-plum)] disabled:opacity-60"
       >
         {status === "loading" ? "Sending…" : "Host a break"}
       </button>

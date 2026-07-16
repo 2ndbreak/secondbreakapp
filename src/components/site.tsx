@@ -44,7 +44,7 @@ export function QuoteCard({ src, alt, quote, tone = "chartreuse", rotate }: Quot
       ? "bg-[color:var(--color-chartreuse)] text-[color:var(--color-plum)]"
       : tone === "ice"
       ? "bg-[color:var(--color-ice)] text-[color:var(--color-plum)]"
-      : "bg-[color:var(--color-flame)] text-[color:var(--color-chartreuse)]";
+      : "bg-[color:var(--color-flame)] text-[color:var(--color-plum)]";
   return (
     <figure
       className="w-full"

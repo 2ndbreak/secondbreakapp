@@ -3,6 +3,9 @@ import { photos, entries } from "@/data/entries";
 import { EntryCard, FramedPhoto, QuoteCard } from "@/components/site";
 import { BrandMark } from "@/components/BrandMark";
 import { PlaygroundSignupForm } from "@/components/forms/PlaygroundSignupForm";
+import problemBlockImg from "@/assets/problem-block.png.asset.json";
+import groupPlayImg from "@/assets/group-play.png.asset.json";
+import brandIdentityGif from "@/assets/brand-identity.gif.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -35,7 +38,7 @@ function Home() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   to="/archive"
-                  className="inline-flex items-center gap-2 rounded-md bg-[color:var(--color-flame)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] transition-colors hover:bg-[color:var(--color-chartreuse)] hover:text-[color:var(--color-plum)]"
+                  className="inline-flex items-center gap-2 rounded-md bg-[color:var(--color-flame)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] transition-colors hover:bg-[color:var(--color-chartreuse)] hover:text-[color:var(--color-plum)]"
                 >
                   Explore the archive
                 </Link>
@@ -53,7 +56,7 @@ function Home() {
                 </Link>
               </div>
             </div>
-            <div className="col-span-12 md:col-span-5 md:mt-[calc(9vw*0.9+38px)] lg:mt-[calc(7vw*0.9+38px)]">
+            <div className="col-span-12 md:col-span-5 md:mt-[calc(9vw*0.9+38px)] lg:mt-[calc(7vw*0.9+38px)] hero-float">
               <FramedPhoto
                 src={photos.heroJumpRope.url}
                 alt={photos.heroJumpRope.alt}
@@ -90,8 +93,8 @@ function Home() {
           </div>
           <div className="col-span-12 md:col-span-5 md:pt-16">
             <QuoteCard
-              src={photos.clap.url}
-              alt={photos.clap.alt}
+              src={problemBlockImg.url}
+              alt="2nd Break — one more chance to play"
               quote="Culture isn't lost because people stop caring. It's lost because people stop practising."
               tone="chartreuse"
               rotate={-1}
@@ -206,8 +209,8 @@ function Home() {
             </div>
             <div className="col-span-12 md:col-span-4">
               <QuoteCard
-                src={photos.clap.url}
-                alt={photos.clap.alt}
+                src={groupPlayImg.url}
+                alt="Group of friends smiling together"
                 quote="Maybe adulthood just needs a Second Break."
                 tone="flame"
               />
@@ -220,8 +223,8 @@ function Home() {
       <section className="color-flame">
         <div className="mx-auto grid max-w-[1400px] grid-cols-12 gap-10 px-4 py-24 sm:px-8">
           <div className="col-span-12 md:col-span-7">
-            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-chartreuse)]">Join the playground</p>
-            <h2 className="display mt-4 text-3xl sm:text-5xl leading-[1.05] text-[color:var(--color-chartreuse)]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-plum)]">Join the playground</p>
+            <h2 className="display mt-4 text-3xl sm:text-5xl leading-[1.05] text-[color:var(--color-plum)]">
               A new game, a new story, in your inbox every fortnight.
             </h2>
             <div className="mt-8 max-w-lg">
@@ -229,12 +232,13 @@ function Home() {
             </div>
           </div>
           <div className="col-span-12 md:col-span-5">
-            <FramedPhoto
-              src={photos.chessSuits.url}
-              alt="Two men in suits over a chessboard, mid-game"
-              className="aspect-[4/5]"
-              rotate={1.5}
-            />
+            <div className="frame aspect-[4/5] w-full overflow-hidden" style={{ transform: "rotate(1.5deg)" }}>
+              <img
+                src={brandIdentityGif.url}
+                alt="2nd Break brand identity in motion"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>

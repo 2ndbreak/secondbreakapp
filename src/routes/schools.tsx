@@ -71,7 +71,7 @@ function SchoolsPage() {
               We work with teachers on lesson plans, consent flows for the learner-elder interviews, and print copies of the annual edition for the school library.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/share" className="rounded-md bg-[color:var(--color-flame)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-chartreuse)] hover:text-[color:var(--color-plum)]">
+              <Link to="/share" className="rounded-md bg-[color:var(--color-flame)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] hover:bg-[color:var(--color-chartreuse)] hover:text-[color:var(--color-plum)]">
                 Contribute an entry
               </Link>
               <a href="mailto:hello@2ndbreak.co.za" className="rounded-md border border-[color:var(--color-ice)]/40 px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-ice)] hover:border-[color:var(--color-chartreuse)] hover:text-[color:var(--color-chartreuse)]">

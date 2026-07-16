@@ -36,7 +36,7 @@ function NotFoundComponent() {
         <div className="mt-8">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 rounded-md bg-[color:var(--color-flame)] px-5 py-3 text-sm font-semibold uppercase tracking-wider text-[color:var(--color-chartreuse)]"
+            className="inline-flex items-center gap-2 rounded-md bg-[color:var(--color-flame)] px-5 py-3 text-sm font-semibold uppercase tracking-wider text-[color:var(--color-plum)]"
           >
             Take me home
           </Link>
@@ -64,7 +64,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="rounded-md bg-[color:var(--color-flame)] px-5 py-3 text-sm font-semibold uppercase tracking-wider text-[color:var(--color-chartreuse)]"
+            className="rounded-md bg-[color:var(--color-flame)] px-5 py-3 text-sm font-semibold uppercase tracking-wider text-[color:var(--color-plum)]"
           >
             Try again
           </button>
@@ -183,7 +183,7 @@ function SiteHeader() {
         <div className="hidden lg:flex items-center gap-2 shrink-0">
           <Link
             to="/share"
-            className="rounded-md bg-[color:var(--color-flame)] px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-chartreuse)] hover:bg-[color:var(--color-plum)]"
+            className="rounded-md bg-[color:var(--color-flame)] px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-plum)] hover:bg-[color:var(--color-plum)]"
           >
             Share a game
           </Link>
@@ -230,7 +230,7 @@ function SiteHeader() {
               <MobileLink to="/contact" onClick={closeMobile} sub>Contact</MobileLink>
             </MobileGroup>
             <div className="mt-4 flex flex-wrap gap-2 border-t border-[color:var(--color-plum)]/15 pt-4">
-              <Link to="/share" onClick={closeMobile} className="rounded-md bg-[color:var(--color-flame)] px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-chartreuse)]">Share a game</Link>
+              <Link to="/share" onClick={closeMobile} className="rounded-md bg-[color:var(--color-flame)] px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-plum)]">Share a game</Link>
               {!loading && user ? (
                 <button onClick={() => { supabase.auth.signOut(); closeMobile(); }} className="rounded-md border border-[color:var(--color-plum)]/40 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-[color:var(--color-plum)]">Log out</button>
               ) : (
@@ -348,7 +348,7 @@ function WhatsAppFloat() {
       target="_blank"
       rel="noreferrer noopener"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[color:var(--color-flame)] px-5 py-3 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-chartreuse)] shadow-lg hover:bg-[color:var(--color-chartreuse)] hover:text-[color:var(--color-plum)]"
+      className="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[color:var(--color-flame)] px-5 py-3 text-xs font-semibold uppercase tracking-widest text-[color:var(--color-plum)] shadow-lg hover:bg-[color:var(--color-chartreuse)] hover:text-[color:var(--color-plum)]"
     >
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.52 3.48A11.9 11.9 0 0 0 12 0C5.37 0 0 5.37 0 12a11.9 11.9 0 0 0 1.64 6L0 24l6.2-1.62A11.9 11.9 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.2-3.48-8.52ZM12 22a10 10 0 0 1-5.1-1.4l-.36-.22-3.68.97.98-3.58-.24-.37A10 10 0 1 1 22 12c0 5.52-4.48 10-10 10Zm5.47-7.5c-.3-.15-1.77-.87-2.05-.97-.28-.1-.48-.15-.68.15-.2.3-.78.97-.96 1.17-.18.2-.36.22-.66.07-.3-.15-1.27-.47-2.42-1.5a9.2 9.2 0 0 1-1.7-2.12c-.18-.3-.02-.47.13-.62.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.68-1.63-.93-2.24-.24-.58-.5-.5-.68-.5H8.7c-.2 0-.53.07-.8.38-.28.3-1.06 1.04-1.06 2.54s1.09 2.94 1.24 3.14c.15.2 2.14 3.27 5.18 4.58.72.3 1.28.5 1.72.63.72.23 1.38.2 1.9.12.58-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.18-1.42-.07-.12-.27-.2-.57-.35Z"/></svg>
       WhatsApp
