@@ -93,8 +93,8 @@ function Home() {
           </div>
           <div className="col-span-12 md:col-span-5 md:pt-16">
             <QuoteCard
-              src={photos.clap.url}
-              alt={photos.clap.alt}
+              src={problemBlockImg.url}
+              alt="2nd Break — one more chance to play"
               quote="Culture isn't lost because people stop caring. It's lost because people stop practising."
               tone="chartreuse"
               rotate={-1}
