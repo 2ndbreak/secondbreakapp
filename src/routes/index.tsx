@@ -3,9 +3,6 @@ import { photos, entries } from "@/data/entries";
 import { EntryCard, FramedPhoto, QuoteCard } from "@/components/site";
 import { BrandMark } from "@/components/BrandMark";
 import { PlaygroundSignupForm } from "@/components/forms/PlaygroundSignupForm";
-import kidsCarAsset from "@/assets/kids-car.png.asset.json";
-import groupHugAsset from "@/assets/group-hug.png.asset.json";
-import brandIdentityGif from "@/assets/brand-identity.gif.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -57,16 +54,15 @@ function Home() {
               </div>
             </div>
             <div className="col-span-12 md:col-span-5 md:mt-[calc(9vw*0.9+38px)] lg:mt-[calc(7vw*0.9+38px)]">
-              <div className="hero-motion frame aspect-[4/5]" style={{ transform: "rotate(1deg)" }}>
-                <img
-                  src={photos.heroJumpRope.url}
-                  alt={photos.heroJumpRope.alt}
-                  loading="eager"
-                  width={900}
-                  height={1125}
-                  className="h-full w-full object-cover"
-                />
-              </div>
+              <FramedPhoto
+                src={photos.heroJumpRope.url}
+                alt={photos.heroJumpRope.alt}
+                className="aspect-[4/5]"
+                rotate={1}
+                loading="eager"
+                width={900}
+                height={1125}
+              />
             </div>
           </div>
         </div>
@@ -94,8 +90,8 @@ function Home() {
           </div>
           <div className="col-span-12 md:col-span-5 md:pt-16">
             <QuoteCard
-              src={kidsCarAsset.url}
-              alt="Two children sitting on the back of a classic Mercedes, one more chance to play"
+              src={photos.clap.url}
+              alt={photos.clap.alt}
               quote="Culture isn't lost because people stop caring. It's lost because people stop practising."
               tone="chartreuse"
               rotate={-1}
@@ -210,8 +206,8 @@ function Home() {
             </div>
             <div className="col-span-12 md:col-span-4">
               <QuoteCard
-                src={groupHugAsset.url}
-                alt="Friends huddled together looking up, smiling"
+                src={photos.clap.url}
+                alt={photos.clap.alt}
                 quote="Maybe adulthood just needs a Second Break."
                 tone="flame"
               />
@@ -233,15 +229,12 @@ function Home() {
             </div>
           </div>
           <div className="col-span-12 md:col-span-5">
-            <div className="frame aspect-[4/5] overflow-hidden" style={{ transform: "rotate(1.5deg)" }}>
-              <img
-                src={brandIdentityGif.url}
-                alt="2nd Break brand identity in motion"
-                className="h-full w-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+            <FramedPhoto
+              src={photos.chessSuits.url}
+              alt="Two men in suits over a chessboard, mid-game"
+              className="aspect-[4/5]"
+              rotate={1.5}
+            />
           </div>
         </div>
       </section>

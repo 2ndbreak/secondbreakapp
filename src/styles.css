@@ -45,8 +45,8 @@
   /* Brand */
   --chartreuse: #D9E14E;
   --ice: #D9EBF7;
-  --flame: #4E9A3A;
-  --plum: #3E2718;
+  --flame: #FA6B40;
+  --plum: #34222E;
   --paper: #FAFAF7;
 
   --radius: 8px;
@@ -181,7 +181,7 @@
 }
 @utility color-flame {
   background-color: var(--color-flame);
-  color: var(--color-paper);
+  color: var(--color-chartreuse);
 }
 @utility color-chartreuse {
   background-color: var(--color-chartreuse);
@@ -204,19 +204,6 @@
 }
 .mark-piece-drift { animation: mark-drift 2.4s ease-in-out infinite; }
 
-@keyframes kenburns {
-  0%   { transform: scale(1) translate3d(0, 0, 0); }
-  50%  { transform: scale(1.08) translate3d(-1.2%, -0.8%, 0); }
-  100% { transform: scale(1.04) translate3d(1%, 0.6%, 0); }
-}
-.hero-motion { overflow: hidden; }
-.hero-motion img {
-  animation: kenburns 20s ease-in-out infinite alternate;
-  will-change: transform;
-  transform-origin: center center;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .mark-piece-drift { animation: none; }
-  .hero-motion img { animation: none; }
 }
