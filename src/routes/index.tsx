@@ -18,7 +18,7 @@ function Home() {
         <div className="mx-auto max-w-[1500px] px-4 py-16 sm:px-8 sm:py-24">
           <div className="flex items-center gap-3 text-[color:var(--color-chartreuse)]">
             <BrandMark size={26} color="#000000" />
-            <span className="text-xs uppercase tracking-[0.25em]">Take Another Break</span>
+            <span className="text-xs uppercase tracking-[0.25em]">BREAK TIME! A RE DLALENG</span>
           </div>
           <div className="mt-6 grid grid-cols-12 gap-x-8 gap-y-10">
             <div className="col-span-12 md:col-span-7">
@@ -27,8 +27,10 @@ function Home() {
                 <span className="block whitespace-nowrap text-[color:var(--color-chartreuse)]">HOW TO</span>
                 <span className="block whitespace-nowrap">PLAY?</span>
               </h1>
-              <p className="mt-10 max-w-lg text-lg leading-relaxed text-[color:var(--color-ice)]/90">
-                Rediscover indigenous games, stories & childhood wonder — every break has a story.
+              <p className="mt-10 max-w-lg text-lg leading-relaxed text-[color:var(--color-ice)]/90 whitespace-pre-line">
+                Come get that childhood energy back.&nbsp;&nbsp;{"\n"}
+                The games. The stories. The "wena wena" vibes.&nbsp;&nbsp;{"\n"}
+                Every break was a movie.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
@@ -41,7 +43,7 @@ function Home() {
                   to="/explore-games"
                   className="inline-flex items-center gap-2 rounded-md bg-[color:var(--color-chartreuse)] px-6 py-4 text-sm font-semibold uppercase tracking-widest text-[color:var(--color-plum)] transition-colors hover:bg-[color:var(--color-ice)]"
                 >
-                  Explore games (videos)
+                  BONA DI GAMES (VIDEOS)
                 </Link>
                 <Link
                   to="/share"
