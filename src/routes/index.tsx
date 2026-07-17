@@ -204,12 +204,12 @@ function Home() {
         </div>
       </section>
 
-      {/* JOIN THE PLAYGROUND */}
-      <section className="color-flame">
+      {/* JOIN THE PLAYGROUND — Plum (brown, was orange) */}
+      <section className="color-plum">
         <div className="mx-auto grid max-w-[1400px] grid-cols-12 gap-10 px-4 py-24 sm:px-8 items-center">
           <div className="col-span-12 md:col-span-6">
-            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-plum)]">Join the playground</p>
-            <h2 className="display mt-4 text-3xl sm:text-5xl leading-[1.05] text-[color:var(--color-plum)]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-chartreuse)]">Join the playground</p>
+            <h2 className="display mt-4 text-3xl sm:text-5xl leading-[1.05] text-[color:var(--color-chartreuse)]">
               A new game in your inbox every fortnight.
             </h2>
             <div className="mt-8 max-w-lg">
@@ -217,7 +217,7 @@ function Home() {
             </div>
           </div>
           <div className="col-span-12 md:col-span-6">
-            <div className="frame w-full overflow-hidden bg-[color:var(--color-plum)]">
+            <div className="frame w-full overflow-hidden bg-[color:var(--color-chartreuse)]">
               <img
                 src={brandIdentityGif.url}
                 alt="2nd Break brand identity in motion"
