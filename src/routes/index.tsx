@@ -71,22 +71,22 @@ function Home() {
         </div>
       </section>
 
-      {/* PROBLEM BLOCK — Plum (brown) */}
-      <section className="color-plum grain">
+      {/* PROBLEM BLOCK — Flame (orange, was brown) */}
+      <section className="color-flame grain">
         <div className="mx-auto grid max-w-[1400px] grid-cols-12 gap-10 px-4 py-24 sm:px-8">
           <div className="col-span-12 md:col-span-7">
-            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-ice)]/70">The problem</p>
-            <h2 className="display mt-4 text-4xl sm:text-6xl leading-[0.95] text-[color:var(--color-flame)]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-plum)]/70">The problem</p>
+            <h2 className="display mt-4 text-4xl sm:text-6xl leading-[0.95] text-[color:var(--color-plum)]">
               Remember Mugusha?
             </h2>
-            <div className="mt-8 space-y-5 text-lg leading-relaxed text-[color:var(--color-ice)]/90">
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-[color:var(--color-plum)]/90">
               <p>
                 Somebody hums a song. Somebody names a game — Diketo, Kgati, Amagenda, Morabaraba. The room lights up. Then somebody asks how it went again, and nobody can quite remember.
               </p>
-              <p className="display text-2xl sm:text-3xl text-[color:var(--color-ice)]">
+              <p className="display text-2xl sm:text-3xl text-[color:var(--color-plum)]">
                 They remember the memories. They've forgotten the game.
               </p>
-              <Link to="/about" className="inline-block text-xs uppercase tracking-widest text-[color:var(--color-flame)] hover:underline underline-offset-4">
+              <Link to="/about" className="inline-block text-xs uppercase tracking-widest text-[color:var(--color-plum)] hover:underline underline-offset-4">
                 Read the full idea →
               </Link>
             </div>
@@ -204,12 +204,12 @@ function Home() {
         </div>
       </section>
 
-      {/* JOIN THE PLAYGROUND */}
-      <section className="color-flame">
+      {/* JOIN THE PLAYGROUND — Plum (brown, was orange) */}
+      <section className="color-plum">
         <div className="mx-auto grid max-w-[1400px] grid-cols-12 gap-10 px-4 py-24 sm:px-8 items-center">
           <div className="col-span-12 md:col-span-6">
-            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-plum)]">Join the playground</p>
-            <h2 className="display mt-4 text-3xl sm:text-5xl leading-[1.05] text-[color:var(--color-plum)]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[color:var(--color-chartreuse)]">Join the playground</p>
+            <h2 className="display mt-4 text-3xl sm:text-5xl leading-[1.05] text-[color:var(--color-chartreuse)]">
               A new game in your inbox every fortnight.
             </h2>
             <div className="mt-8 max-w-lg">
@@ -217,7 +217,7 @@ function Home() {
             </div>
           </div>
           <div className="col-span-12 md:col-span-6">
-            <div className="frame w-full overflow-hidden bg-[color:var(--color-plum)]">
+            <div className="frame w-full overflow-hidden bg-[color:var(--color-chartreuse)]">
               <img
                 src={brandIdentityGif.url}
                 alt="2nd Break brand identity in motion"
